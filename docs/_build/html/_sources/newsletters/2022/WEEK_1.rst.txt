@@ -1,8 +1,17 @@
-# Python-World Newsletter:
-📰 Python-World Newsletter: Empowering the Python Community with Code 🐍💻
+Python-World Newsletter - Jan 2022 - Week 1
+############################################
 
+Introduction and Highlights
+---------------------------
 
-### Introduction :
+Welcome to the latest edition of the Python-World Newsletter! We bring
+you the most exciting updates and insightful content from the Python
+community. In this week’s edition, we have some incredible code
+snippets, community spotlights, upcoming events, useful resources, and
+more. Let’s dive in!
+
+Introduction
+-------------
 
 Welcome to the Python-World Newsletter, your ultimate source for the latest updates, insights, and code snippets from the Python programming universe! 🌍✨
 
@@ -14,16 +23,44 @@ At Python-World, we are passionate about promoting knowledge sharing, collaborat
 
 🌟 Python-World Newsletter is more than just a one-way communication channel. We encourage active participation from our readers! Share your own Python code snippets, tips, and tricks, or suggest topics you would like us to cover. Join our vibrant community and engage in discussions with fellow Python enthusiasts on our dedicated GitHub repository, where you can collaborate, provide feedback, and contribute to the newsletter's growth.
 
-### Newsletter Structure :
-- Doc
-  - Year
-      - Week1 
-      - week2
-
-### Contributing :
-👋 Thank you for your interest in contributing to the Python-World Newsletter! We welcome contributions from the Python community to make our newsletter even more vibrant and valuable [CONTRIBUTING GUIDELINES](./CONTRIBUTING.md)
 
 
-### Contact :
+Useful Resources
+----------------
 
-If you have any questions or need further assistance, feel free to reach out to us at [pythonworldhelp@gmail.com] or join the discussion on our [GitHub Discussions](https://github.com/Python-World/newsletter/discussions) board.
+Here are some valuable resources to enhance your Python programming
+skills and stay updated with the latest trends:
+
+
+-  **Discussions**:join the discussion on our 
+   `GitHub Discussions board <https://github.com/Python-World/newsletter/discussions>`__.
+
+-  **Website**: `Python
+   World <https://github.com/Python-World>`__.
+   Engage with fellow developers, share knowledge, and contribute to the
+   Python ecosystem.
+
+Stay curious, keep learning, and make the most of these resources to
+enhance your Python journey!
+
+Contact
+-------
+
+If you have any questions or need further assistance, feel free to reach
+out to us at [pythonworldhelp@gmail.com] or join the discussion on our
+`GitHub
+Discussions <https://github.com/Python-World/newsletter/discussions>`__
+board.
+
+Contributors
+------------
+
+We would like to express our sincere gratitude to the following
+contributors who have made valuable contributions to this edition of the
+Python-World Newsletter:
+
+-  `Ravishankar Chavare <github.com/chavarera/>`__
+
+Thank you for your dedication and for enriching the Python community
+with your valuable insights, code snippets, and contributions! Happy
+coding! 🐍✨
