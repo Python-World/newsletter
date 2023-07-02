@@ -334,7 +334,7 @@ you can use a ``requests.Session`` object. Here’s an example:
 
        # Also U can set custom attibute to response object
        response.custom_hook_called=True
-       
+
 
    # Create a session and register the custom hook
    session = requests.Session()
@@ -386,7 +386,7 @@ understand how it works.
                    'text': link.text
                }
 
-               
+
 
    # Create a CrawlerProcess instance
    process = CrawlerProcess()
@@ -420,7 +420,7 @@ differently or store them in any desired format.
 parameters to customize link extraction based on patterns, tags,
 attributes, and more. Make sure to explore the Scrapy documentation for
 more advanced usage.
-                
+
 7. 📝 itemgetter in python
 ***************************
 
@@ -614,22 +614,22 @@ dependencies into a single executable ZIP file. This ZIP file can be
 executed directly, making it convenient to distribute your application
 as a standalone package.
 
-🚀 **Key Features and Benefits:** 
+🚀 **Key Features and Benefits:**
 
-- Simplified Distribution: 
+- Simplified Distribution:
     With Zipapp, you can distribute your Python application as a single file,
-    eliminating the need for users to install dependencies separately. 
+    eliminating the need for users to install dependencies separately.
 
-- Easy Execution: 
+- Easy Execution:
     The executable ZIP file can be run directly without
-    the need for a Python interpreter or additional setup. 
+    the need for a Python interpreter or additional setup.
 
-- Cross-Platform Compatibility: 
+- Cross-Platform Compatibility:
     Zipapp packages are portable and can
     be executed on different operating systems, making it easier to
     distribute your application across platforms.
 
-🔧 **Creating a Zipapp:** 
+🔧 **Creating a Zipapp:**
 
 Creating a zipapp is straightforward.Here’s a
 simple example create ``app.py`` file in ``myapp``:
@@ -652,7 +652,7 @@ To create the zipapp
 In this example, we’re creating a zipapp named ``myapp.pyz``, specifying
 the ``app.py`` file as the entry point .
 
-🚀 **Executing the Zipapp:** 
+🚀 **Executing the Zipapp:**
 
 Once you have the zipapp file, you can run
 it like any other executable. Here’s an example:
@@ -662,16 +662,16 @@ it like any other executable. Here’s an example:
    $ python myapp.pyz
    Hello, Python-World!
 
-💡 **Use Cases and Considerations:** 
+💡 **Use Cases and Considerations:**
 
-- *Distribution of Command-Line Tools:* 
+- *Distribution of Command-Line Tools:*
     Zipapp is an excellent choice for packaging and distributing
-    command-line tools written in Python. 
-- *Portable Applications:* 
+    command-line tools written in Python.
+- *Portable Applications:*
     If you want to create a portable Python application that can be run on
     different systems without requiring installation, zipapp can be a great
-    solution. 
-- *Version Management:* 
+    solution.
+- *Version Management:*
     Zipapp can help in managing and
     distributing specific versions of your application, ensuring consistent
     execution across environments.
@@ -687,7 +687,7 @@ processes.
 
 🔎 When it comes to handling sensitive user input, such as passwords or other confidential information, security is of utmost importance.the `getpass()` method, which provides a secure way to accept user input without displaying it on the screen.
 
-**What is getpass()?** 
+**What is getpass()?**
 
 The `getpass()` method is a part of the Python `getpass` module. It is used to prompt the user for input, such as a password, and securely captures the input without echoing it back to the screen.
 
@@ -704,7 +704,7 @@ Using the `getpass()` method is straightforward. Here's a simple example:
 .. code:: python
 
   import getpass
-  
+
   password = getpass.getpass("Enter your password: ")
   print("Password entered:", password)
 
@@ -719,7 +719,7 @@ When you run this code, the `getpass()` method will prompt the user to enter a p
 The `getpass()` method is a valuable tool for securely capturing sensitive user input, making it an ideal choice when handling passwords or other confidential information. By using this method, you can enhance the security of your applications and protect user privacy.
 
 .. raw:: html
-                
+
      </details>
 
 Upcoming Events
