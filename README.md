@@ -16,7 +16,7 @@ At Python-World, we are passionate about promoting knowledge sharing, collaborat
 
 ### Newsletter Structure :
 - doc
-  -newslettwers
+  - newslettwers
     - Year
         - Week1 
         - week2
