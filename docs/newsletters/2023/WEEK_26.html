@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Python-World Newsletter - June 2023, Week 25" href="WEEK_25.html" /><link rel="prev" title="2023" href="../index.2023.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Week 25 - June 2023" href="WEEK_25.html" /><link rel="prev" title="2023" href="../index.2023.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>Python-World Newsletter - June 2023, Week 26 - Python-world documentation</title>
+        <title>Week 26 - Jully 2023 - Python-World Newsletter&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Python-world  documentation</div></a>
+      <a href="../../index.html"><div class="brand">Python-World Newsletter's</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -147,7 +147,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   
-  <span class="sidebar-brand-text">Python-world  documentation</span>
+  <span class="sidebar-brand-text">Python-World Newsletter's</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -199,8 +199,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="python-world-newsletter-june-2023-week-26">
-<h1>Python-World Newsletter - June 2023, Week 26<a class="headerlink" href="#python-world-newsletter-june-2023-week-26" title="Permalink to this heading">#</a></h1>
+          <section id="week-26-jully-2023">
+<h1>Week 26 - Jully 2023<a class="headerlink" href="#week-26-jully-2023" title="Permalink to this heading">#</a></h1>
 <section id="introduction-and-highlights">
 <h2>Introduction and Highlights<a class="headerlink" href="#introduction-and-highlights" title="Permalink to this heading">#</a></h2>
 <p>Welcome to the latest edition of the Python-World Newsletter! We bring
@@ -483,9 +483,10 @@ more. Let’s dive in!</p>
 </section>
 <section id="understanding-args-and-kwargs-in-python">
 <h3>7. 🧩 Understanding <cite>*args</cite> and <cite>**kwargs</cite> in Python<a class="headerlink" href="#understanding-args-and-kwargs-in-python" title="Permalink to this heading">#</a></h3>
-<p>In Python, <a href="#id1"><span class="problematic" id="id2">*</span></a>args and <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs are special syntaxes used to pass a variable number of arguments to functions. These notations provide flexibility when working with functions that can accept an arbitrary number of arguments. This article dives into the details of <a href="#id5"><span class="problematic" id="id6">*</span></a>args and <a href="#id7"><span class="problematic" id="id8">**</span></a>kwargs and explores their uses and benefits.</p>
+<p>In Python, *args and **kwargs are special syntaxes used to pass a variable number of arguments to functions. These notations provide flexibility when working with functions that can accept an arbitrary number of arguments.
+This article dives into the details of *args and **kwargs and explores their uses and benefits.</p>
 <p><strong>🌟 *args: Variable-Length Arguments</strong></p>
-<p>The <a href="#id9"><span class="problematic" id="id10">*</span></a>args syntax allows a function to accept a variable number of non-keyword arguments. It collects the arguments passed to the function into a tuple, enabling the function to handle any number of positional arguments.</p>
+<p>The *args syntax allows a function to accept a variable number of non-keyword arguments. It collects the arguments passed to the function into a tuple, enabling the function to handle any number of positional arguments.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
@@ -498,7 +499,7 @@ more. Let’s dive in!</p>
 </div>
 <p>In the above code, the function <cite>sum_numbers</cite> accepts any number of arguments. The <cite>*args</cite> notation allows passing multiple values, which are then treated as a tuple within the function. This way, you can perform operations on an arbitrary number of arguments.</p>
 <p><strong>🔧 kwargs : Variable-Length Keyword Arguments</strong></p>
-<p>The <a href="#id11"><span class="problematic" id="id12">**</span></a>kwargs syntax, on the other hand, enables a function to accept a variable number of keyword arguments. It collects the keyword arguments passed to the function into a dictionary, allowing the function to handle a flexible set of named arguments.</p>
+<p>The **kwargs syntax, on the other hand, enables a function to accept a variable number of keyword arguments. It collects the keyword arguments passed to the function into a dictionary, allowing the function to handle a flexible set of named arguments.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_details</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -509,7 +510,7 @@ more. Let’s dive in!</p>
 </div>
 <p>In the above code, the function <cite>print_details</cite> accepts any number of keyword arguments. The <cite>**kwargs</cite> notation collects the key-value pairs and treats them as a dictionary within the function. This allows for flexible handling of named arguments without explicitly defining them.</p>
 <p><strong>🎯 Combining *args and **kwargs</strong></p>
-<p>You can also use <a href="#id13"><span class="problematic" id="id14">*</span></a>args and <a href="#id15"><span class="problematic" id="id16">**</span></a>kwargs together in a function declaration to handle both positional and keyword arguments simultaneously. This allows for maximum flexibility when designing functions that can accept different types of inputs.</p>
+<p>You can also use *args and **kwargs together in a function declaration to handle both positional and keyword arguments simultaneously. This allows for maximum flexibility when designing functions that can accept different types of inputs.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Positional Argument: </span><span class="si">{</span><span class="n">arg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -521,7 +522,7 @@ more. Let’s dive in!</p>
 </div>
 <p>In the above code, the function <cite>process_data</cite> can handle both positional and keyword arguments. The <cite>*args</cite> notation captures any number of positional arguments, while the <cite>**kwargs</cite> notation captures any number of keyword arguments. This allows for ultimate flexibility in function parameter handling.</p>
 <p><strong>💡 Conclusion</strong></p>
-<p>Understanding <a href="#id17"><span class="problematic" id="id18">*</span></a>args and <a href="#id19"><span class="problematic" id="id20">**</span></a>kwargs in Python empowers you to write more flexible and versatile functions. <a href="#id21"><span class="problematic" id="id22">*</span></a>args enables you to handle an arbitrary number of positional arguments, while <a href="#id23"><span class="problematic" id="id24">**</span></a>kwargs allows you to handle a variable number of keyword arguments. By combining both notations, you can create functions that are capable of accepting and processing different types of inputs. Utilizing <a href="#id25"><span class="problematic" id="id26">*</span></a>args and <a href="#id27"><span class="problematic" id="id28">**</span></a>kwargs expands the capabilities of your code and enables you to build more dynamic and adaptable solutions.</p>
+<p>Understanding *args and **kwargs in Python empowers you to write more flexible and versatile functions. *args enables you to handle an arbitrary number of positional arguments, while **kwargs allows you to handle a variable number of keyword arguments. By combining both notations, you can create functions that are capable of accepting and processing different types of inputs. Utilizing *args and **kwargs expands the capabilities of your code and enables you to build more dynamic and adaptable solutions.</p>
 </section>
 <section id="exploring-context-managers-in-python-with-with">
 <h3>8. 🔍 Exploring Context Managers in Python with <cite>with</cite><a class="headerlink" href="#exploring-context-managers-in-python-with-with" title="Permalink to this heading">#</a></h3>
@@ -796,7 +797,7 @@ coding! 🐍✨</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Python-World Newsletter - June 2023, Week 25</div>
+                <div class="title">Week 25 - June 2023</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -841,7 +842,7 @@ coding! 🐍✨</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Python-World Newsletter - June 2023, Week 26</a><ul>
+<li><a class="reference internal" href="#">Week 26 - Jully 2023</a><ul>
 <li><a class="reference internal" href="#introduction-and-highlights">Introduction and Highlights</a></li>
 <li><a class="reference internal" href="#code-snippets">Code Snippets</a><ul>
 <li><a class="reference internal" href="#exploring-the-power-of-r-in-python-s-print-statement">1. 🐍 Exploring the Power of \r in Python’s Print Statement</a></li>

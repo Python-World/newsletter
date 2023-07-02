@@ -1,5 +1,5 @@
-Python-World Newsletter - Jan 2022 - Week 1
-############################################
+Week 1 - Jan 2022 
+#################
 
 Introduction and Highlights
 ---------------------------

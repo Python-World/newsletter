@@ -1,5 +1,5 @@
-Python-World Newsletter - June 2023, Week 26
-############################################
+Week 26 - Jully 2023
+####################
 
 Introduction and Highlights
 ---------------------------
@@ -382,11 +382,12 @@ Ellipses in Python serve multiple purposes, ranging from placeholders for unwrit
 7. 🧩 Understanding `*args` and `**kwargs` in Python
 *****************************************************
 
-In Python, *args and **kwargs are special syntaxes used to pass a variable number of arguments to functions. These notations provide flexibility when working with functions that can accept an arbitrary number of arguments. This article dives into the details of *args and **kwargs and explores their uses and benefits.
+In Python, \*args and \**kwargs are special syntaxes used to pass a variable number of arguments to functions. These notations provide flexibility when working with functions that can accept an arbitrary number of arguments. 
+This article dives into the details of \*args and \**kwargs and explores their uses and benefits.
 
 **🌟 *args: Variable-Length Arguments**
 
-The *args syntax allows a function to accept a variable number of non-keyword arguments. It collects the arguments passed to the function into a tuple, enabling the function to handle any number of positional arguments.
+The \*args syntax allows a function to accept a variable number of non-keyword arguments. It collects the arguments passed to the function into a tuple, enabling the function to handle any number of positional arguments.
 
 
 .. code:: python
@@ -405,7 +406,7 @@ In the above code, the function `sum_numbers` accepts any number of arguments. T
 
 **🔧 kwargs : Variable-Length Keyword Arguments**
 
-The **kwargs syntax, on the other hand, enables a function to accept a variable number of keyword arguments. It collects the keyword arguments passed to the function into a dictionary, allowing the function to handle a flexible set of named arguments.
+The \**kwargs syntax, on the other hand, enables a function to accept a variable number of keyword arguments. It collects the keyword arguments passed to the function into a dictionary, allowing the function to handle a flexible set of named arguments.
 
 
 .. code:: python
@@ -418,11 +419,11 @@ The **kwargs syntax, on the other hand, enables a function to accept a variable 
     print_details(city="London", country="UK", occupation="Engineer")  # Output: city: London, country: UK, occupation: Engineer
 
 
-In the above code, the function `print_details` accepts any number of keyword arguments. The `**kwargs` notation collects the key-value pairs and treats them as a dictionary within the function. This allows for flexible handling of named arguments without explicitly defining them.
+In the above code, the function `print_details` accepts any number of keyword arguments. The `\**kwargs` notation collects the key-value pairs and treats them as a dictionary within the function. This allows for flexible handling of named arguments without explicitly defining them.
 
 **🎯 Combining *args and **kwargs**
 
-You can also use *args and **kwargs together in a function declaration to handle both positional and keyword arguments simultaneously. This allows for maximum flexibility when designing functions that can accept different types of inputs.
+You can also use \*args and \**kwargs together in a function declaration to handle both positional and keyword arguments simultaneously. This allows for maximum flexibility when designing functions that can accept different types of inputs.
 
 
 .. code:: python
@@ -440,7 +441,7 @@ In the above code, the function `process_data` can handle both positional and ke
 
 **💡 Conclusion**
 
-Understanding *args and **kwargs in Python empowers you to write more flexible and versatile functions. *args enables you to handle an arbitrary number of positional arguments, while **kwargs allows you to handle a variable number of keyword arguments. By combining both notations, you can create functions that are capable of accepting and processing different types of inputs. Utilizing *args and **kwargs expands the capabilities of your code and enables you to build more dynamic and adaptable solutions.
+Understanding \*args and \**kwargs in Python empowers you to write more flexible and versatile functions. \*args enables you to handle an arbitrary number of positional arguments, while \**kwargs allows you to handle a variable number of keyword arguments. By combining both notations, you can create functions that are capable of accepting and processing different types of inputs. Utilizing \*args and \**kwargs expands the capabilities of your code and enables you to build more dynamic and adaptable solutions.
 
 
 8. 🔍 Exploring Context Managers in Python with `with`
@@ -577,7 +578,7 @@ Generators in Python, implemented using the `yield` keyword, provide a powerful 
 
 
 10. ⚡️ Understanding Async and Await in Python: Concurrency Made Easy
-*********************************************************************
+**********************************************************************
 
 **🔗 What is Async and Await?**
 

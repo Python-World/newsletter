@@ -1,5 +1,5 @@
-Python-World Newsletter - June 2023, Week 25
-############################################
+Week 25 - June 2023
+###################
 
 Introduction and Highlights
 ---------------------------

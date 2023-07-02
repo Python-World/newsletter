@@ -19,6 +19,8 @@ author = 'Ravishankar Chavare'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+html_title = "Python-World Newsletter's"
+
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary','sphinx_copybutton']
 
 templates_path = ['_templates']
