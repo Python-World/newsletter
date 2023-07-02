@@ -15,10 +15,11 @@ At Python-World, we are passionate about promoting knowledge sharing, collaborat
 🌟 Python-World Newsletter is more than just a one-way communication channel. We encourage active participation from our readers! Share your own Python code snippets, tips, and tricks, or suggest topics you would like us to cover. Join our vibrant community and engage in discussions with fellow Python enthusiasts on our dedicated GitHub repository, where you can collaborate, provide feedback, and contribute to the newsletter's growth.
 
 ### Newsletter Structure :
-- Doc
-  - Year
-      - Week1 
-      - week2
+- doc
+  -newslettwers
+    - Year
+        - Week1 
+        - week2
 
 ### Contributing :
 👋 Thank you for your interest in contributing to the Python-World Newsletter! We welcome contributions from the Python community to make our newsletter even more vibrant and valuable [CONTRIBUTING GUIDELINES](./CONTRIBUTING.md)

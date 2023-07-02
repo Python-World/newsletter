@@ -15,11 +15,12 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'Python-world'
 copyright = '2023, Ravishankar Chavare'
 author = 'Ravishankar Chavare'
+html_title = "Python-World Newsletter"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-html_title = "Python-World Newsletter's"
+
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary','sphinx_copybutton']
 

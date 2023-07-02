@@ -577,7 +577,7 @@ Generators in Python, implemented using the `yield` keyword, provide a powerful 
 
 
 
-10. ⚡️ Understanding Async and Await in Python: Concurrency Made Easy
+10.⚡️ Understanding Async and Await in Python: Concurrency Made Easy
 **********************************************************************
 
 **🔗 What is Async and Await?**
