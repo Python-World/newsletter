@@ -21,8 +21,9 @@ html_title = "Python-World Newsletter"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 
+source_suffix = ['.rst', '.md']
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary','sphinx_copybutton']
+extensions = ['myst_parser','sphinx.ext.autodoc', 'sphinx.ext.autosummary','sphinx_copybutton']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
