@@ -382,7 +382,7 @@ Ellipses in Python serve multiple purposes, ranging from placeholders for unwrit
 7. 🧩 Understanding `*args` and `**kwargs` in Python
 *****************************************************
 
-In Python, \*args and \**kwargs are special syntaxes used to pass a variable number of arguments to functions. These notations provide flexibility when working with functions that can accept an arbitrary number of arguments. 
+In Python, \*args and \**kwargs are special syntaxes used to pass a variable number of arguments to functions. These notations provide flexibility when working with functions that can accept an arbitrary number of arguments.
 This article dives into the details of \*args and \**kwargs and explores their uses and benefits.
 
 **🌟 *args: Variable-Length Arguments**
@@ -648,74 +648,7 @@ Async and await provide several advantages:
 
  non-blocking I/O, async and await help create responsive applications that can handle multiple tasks simultaneously.
 
-**💡 Writing Your Own Async Context Managers**
 
-In addition to writing asynchronous functions, Python also provides the ability to create async context managers using the `async with` statement. Async context managers are useful for managing resources that require asynchronous setup and teardown.
-
-To create an async context manager, you need to define an asynchronous context manager class that implements the `__aenter__()` and `__aexit__()` methods. These methods specify the setup and teardown actions for acquiring and releasing resources.
-
-Here's an example of an async context manager for managing a database connection:
-
-
-.. code:: python
-
-    import asyncio
-
-    class DatabaseConnection:
-        def __init__(self, connection_string):
-            self.connection_string = connection_string
-
-        async def __aenter__(self):
-            self.connection = await asyncio.sleep(1)  # Simulating asynchronous setup
-            return self.connection
-
-        async def __aexit__(self, exc_type, exc_val, exc_tb):
-            await asyncio.sleep(1)  # Simulating asynchronous teardown
-            self.connection.close()
-
-    async def main():
-        async with DatabaseConnection("example_connection_string") as connection:
-            # Perform database operations using the connection
-            pass
-
-    asyncio.run(main())
-
-
-In this example, the `DatabaseConnection` class is defined as an async context manager by implementing the `__aenter__()` and `__aexit__()` methods. The `__aenter__()` method is responsible for setting up the connection, while the `__aexit__()` method handles the teardown.
-
-**🌟 Decorators that Take Arguments in Async Functions**
-
-Similar to synchronous functions, async functions can also be decorated to modify their behavior. Decorators that take arguments can be particularly useful when working with async functions.
-
-To create decorators that take arguments for async functions, you can follow the same principles as with synchronous functions. The only difference is that the decorator itself needs to be an async function or an async context manager.
-
-Here's an example of a decorator that measures the execution time of an async function:
-
-
-.. code:: python
-
-    import time
-    import asyncio
-
-    def measure_time_async(func):
-        async def wrapper(*args, **kwargs):
-            start_time = time.time()
-            result = await func(*args, **kwargs)
-            end_time = time.time()
-            execution_time = end_time - start_time
-            print(f"Execution time: {execution_time} seconds")
-            return result
-        return wrapper
-
-    @measure_time_async
-    async def process_data_async(data):
-        await asyncio.sleep(1)  # Simulating some async processing
-        return data
-
-    asyncio.run(process_data_async("example_data"))
-
-
-In this example, the `measure_time_async` decorator is defined as a regular function that takes an async function as an argument. It measures the execution time of the async function and prints the result.
 
 **🚀 Unlocking the Power of Async and Await**
 
