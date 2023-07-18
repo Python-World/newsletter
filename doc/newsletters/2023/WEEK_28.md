@@ -380,7 +380,7 @@ To dive deeper into the `string` module and its functionalities, here are some r
 - Official Python Documentation: [`string`](https://docs.python.org/3/library/string.html)
 
 
-### 🔢 Python Match Statement
+### 6. 🔢 Python Match Statement
 
 Introduced in Python 3.10, the match statement is a powerful tool for pattern matching. It allows you to simplify complex if-elif-else chains by providing a concise and readable syntax. Here's an example:
 
@@ -407,7 +407,7 @@ def get_day_of_week(day_number):
 
 The match statement evaluates the input expression (`day_number` in this case) and compares it against different patterns (`case` statements). If a match is found, the corresponding block of code is executed. The `_` represents a wildcard pattern that matches anything.
 
-### 🌪️ Decorators that Take Arguments
+### 7. 🌪️ Decorators that Take Arguments
 
 Building upon the [previous article](https://python-world.github.io/newsletter/newsletters/2023/WEEK_27.html#unleash-the-power-of-python-function-decorators) on decorators, we can enhance their functionality by allowing them to accept arguments. This provides greater flexibility and customization.
 
@@ -432,7 +432,7 @@ greet("John")
 
 In this example, the `repeat` decorator takes an argument `n` and returns a decorator function. This decorator function, in turn, takes the original function as an argument and returns the modified function (`wrapper`). The modified function is then executed multiple times, as specified by the `repeat` argument.
 
-### 🛫 Map and Filter Functions
+### 8. 🛫 Map and Filter Functions
 
 Python provides two built-in functions, `map` and `filter`, that are widely used to process iterables.
 
@@ -454,7 +454,7 @@ even_numbers = filter(lambda x: x % 2 == 0, numbers)
 print(list(even_numbers))  # Output: [2, 4]
 ```
 
-### 🍁 Global and Nonlocal Variables
+### 9. 🍁 Global and Nonlocal Variables
 
 In Python, the `global` and `nonlocal` keywords allow you to modify variables outside the current scope.
 
@@ -487,7 +487,7 @@ def outer():
 outer()  # Output: 2
 ```
 
-### 🫙 Closures
+### 10. 🫙 Closures
 
 A closure is a function object that remembers values in its enclosing scope, even if they are not present in memory. This allows the function to access and manipulate variables from the outer function, even after the outer function has finished executing. Here's an example:
 
