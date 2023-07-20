@@ -254,17 +254,6 @@ Sure! Here's the text formatted in proper Markdown format:
 If you have any questions or need further assistance, feel free to reach out to us at [pythonworldhelp@gmail.com](mailto:pythonworldhelp@gmail.com) or join the discussion on our [GitHub Discussions](https://github.com/Python-World/newsletter/discussions) board.
 
 
-## Contributors
-
-
-We would like to express our sincere gratitude to the following
-contributors who have made valuable contributions to this edition of the
-Python-World Newsletter:
-
-- [Ravishankar Chavare](https://github.com/chavarera/)
-- [Aahnik Daw](https://github.com/aahnik/)
-
-
 Thank you for your dedication and for enriching the Python community
 with your valuable insights, code snippets, and contributions! Happy
 coding! 🐍✨
