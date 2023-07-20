@@ -1,5 +1,6 @@
-sphinx_copybutton
-ghp-import
 furo
 sphinx
+ghp-import
 myst-parser
+sphinx_copybutton
+sphinx-contributors
