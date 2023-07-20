@@ -9,7 +9,6 @@ Python-world Newsletter
 .. toctree::
    :maxdepth: 2
 
-   contributors
    modules
    
    
