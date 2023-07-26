@@ -1,5 +1,5 @@
 
-# Week 28 - Jully 2023
+# Week 28 - July 2023
 
 ## Introduction and Highlights
 
