@@ -1,17 +1,6 @@
 Week 25 - June 2023
 ###################
 
-Introduction and Highlights
----------------------------
-
-Welcome to the latest edition of the Python-World Newsletter! We bring
-you the most exciting updates and insightful content from the Python
-community. In this week’s edition, we have some incredible code
-snippets, community spotlights, upcoming events, useful resources, and
-more. Let’s dive in!
-
-Code Snippets
--------------
 
 1. 🐍 Power of the “repr” function in python.
 *********************************************
@@ -722,21 +711,6 @@ The `getpass()` method is a valuable tool for securely capturing sensitive user 
                 
      </details>
 
-Upcoming Events
----------------
-
-+------------------+---------+------------+---------------------------+
-| Event Name       | Date    | Location   | URL                       |
-+==================+=========+============+===========================+
-| PyCon 2023       | Sept 29 | HYDRABAD   | `Website <https           |
-|                  | To 02   |            | ://in.pycon.org/2023/>`__ |
-|                  | Oct     |            |                           |
-+------------------+---------+------------+---------------------------+
-
-Stay updated with the latest events and conferences in the Python
-community. Mark your calendars and don’t miss out on these exciting
-opportunities to learn, network, and engage with fellow Python
-enthusiasts!
 
 Useful Resources
 ----------------
@@ -757,25 +731,3 @@ skills and stay updated with the latest trends:
 
 Stay curious, keep learning, and make the most of these resources to
 enhance your Python journey!
-
-Contact
--------
-
-If you have any questions or need further assistance, feel free to reach
-out to us at [pythonworldhelp@gmail.com] or join the discussion on our
-`GitHub
-Discussions <https://github.com/Python-World/newsletter/discussions>`__
-board.
-
-Contributors
-------------
-
-We would like to express our sincere gratitude to the following
-contributors who have made valuable contributions to this edition of the
-Python-World Newsletter:
-
--  `Ravishankar Chavare <github.com/chavarera/>`__
-
-Thank you for your dedication and for enriching the Python community
-with your valuable insights, code snippets, and contributions! Happy
-coding! 🐍✨

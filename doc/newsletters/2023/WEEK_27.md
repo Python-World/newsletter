@@ -1,21 +1,10 @@
 
 # Week 27 - Jully 2023
 
-## Introduction and Highlights
-
-
-Welcome to the latest edition of the Python-World Newsletter! We bring
-you the most exciting updates and insightful content from the Python
-community. In this week’s edition, we have some incredible code
-snippets, community spotlights, upcoming events, useful resources, and
-more. Let’s dive in!
-
-## Code Snippets
 
 
 
-
-### 1. 🔄  Mastering the 'else' Statement in Looping
+## 1. 🔄  Mastering the 'else' Statement in Looping
 
 In Python, the 'else' statement in loops is often overlooked but can bring some valuable functionality to your code. It allows you to specify a block of code that will execute only if the loop completes normally, without any 'break' statements being encountered.
 
@@ -48,7 +37,7 @@ Keep in mind that the 'else' block in loops is entirely optional and not mandato
 
 
 
-### 2. 🌐 Track the history of a request using the "requests.history"
+## 2. 🌐 Track the history of a request using the "requests.history"
 
 **Understanding Requests History 📜**
 
@@ -88,7 +77,7 @@ In this code snippet, we make a GET request to "https://example.com". If the req
 Now that you're aware of the "requests.history" feature, start incorporating it into your projects. It enables you to track the journey of your requests, diagnose errors, and ensure the proper flow of interactions with APIs and websites.
 
 
-### 3. 🆔 Understanding UUIDs
+## 3. 🆔 Understanding UUIDs
 
 A UUID, which stands for Universally Unique Identifier, is a 128-bit identifier that ensures uniqueness across all devices and platforms. It provides a reliable way to generate unique identifiers without the need for central coordination. Python offers a built-in module called "uuid" that allows you to work with UUIDs effortlessly.
 
@@ -127,7 +116,7 @@ By incorporating UUIDs into your Python projects, you can ensure global uniquene
 
 
 
-### 4. ⚠️ Understanding Errno and Error Handling
+## 4. ⚠️ Understanding Errno and Error Handling
 
 In Python, "errno" refers to the system error codes that are provided by the underlying operating system. These codes represent various types of errors encountered during program execution. Python's "errno" module provides a convenient way to access and handle these error codes.
 
@@ -189,7 +178,7 @@ Understanding these error codes can help you diagnose and handle specific error 
 By mastering the art of error handling and utilizing the "errno" module, you can ensure your Python programs handle errors gracefully and respond intelligently to unexpected situations. Error handling empowers you to build robust and reliable applications.
 
 
-### 5. 🐞 Dive into Debugging with PDB
+## 5. 🐞 Dive into Debugging with PDB
 
 **⚙️ Understanding PDB and its Importance ⚙️**
 
@@ -231,7 +220,7 @@ By embracing PDB, you unlock a whole new level of debugging proficiency. Underst
 
 
 
-### 6. 🔥 Unleash the power of Python Function Decorators
+## 6. 🔥 Unleash the power of Python Function Decorators
 
 In Python, functions are first-class objects, which means they can be passed as arguments to other functions.
 This property is known as "higher-order functions" or "first-class functions."
@@ -319,7 +308,7 @@ We will also discuss about various open source libraries where this decorator pa
 Stay tuned.
 
 
-### 7. ✅ Using `assert` in Python
+## 7. ✅ Using `assert` in Python
 
 The usage of `assert` is very simple. You simply write `assert` and then the condition, you want to check.
 
@@ -356,11 +345,11 @@ This would output
 AssertionError: x is not negative
 ```
 
-#### Industry use cases of `assert`
+### Industry use cases of `assert`
 
 The `assert` statement in Python is a powerful tool that allows programmers to perform runtime assertions in their code. It helps verify assumptions and catch potential bugs during development and testing. While its primary purpose is to validate conditions, `assert` can be used in a variety of real-life scenarios, ranging from simple to advanced applications. In this article, we explore some practical use cases of `assert` in Python.
 
-##### 1. Input Validation
+#### 1. Input Validation
 
 One common use of `assert` is to validate input parameters or function arguments. By using `assert` statements, you can ensure that the provided inputs meet the expected criteria or constraints. Let's consider an example:
 
@@ -375,7 +364,7 @@ def calculate_discount(price, discount):
 
 In this scenario, the `assert` statements ensure that the `price` is positive and the `discount` is within the valid range. If any of these conditions are not met, an `AssertionError` is raised with a custom error message, providing valuable feedback to the developer.
 
-##### 2. Debugging and Testing
+#### 2. Debugging and Testing
 
 When debugging code or writing test cases, `assert` statements can be incredibly useful. They help to check intermediate values, test assumptions, and ensure that the code is behaving as expected. Let's consider a simple debugging example:
 
@@ -396,7 +385,7 @@ print(result)
 
 In this case, the `assert` statement is used as a debugging tool to validate the assumption that `b` should not be zero before executing the `divide_numbers` function. If the condition fails, the program halts, and an error message is displayed, aiding in identifying the issue.
 
-##### 3. Program Invariants
+#### 3. Program Invariants
 
 Program invariants are conditions that are expected to be true at specific points during the program's execution. Using `assert` statements to check these invariants can help detect logical errors. For instance, consider a banking application where account balances should always be positive:
 
@@ -416,7 +405,7 @@ class BankAccount:
 
 Here, the `assert` statements ensure that the `balance` is non-negative and that the withdrawal amount is both positive and within the available funds. Violating these conditions would indicate a logical error, allowing developers to identify and fix issues early.
 
-##### 4. Unit Testing
+#### 4. Unit Testing
 
 In unit testing, `assert` statements are frequently used to verify the correctness of code by comparing expected and actual values. By comparing these values, `assert` statements help validate that functions and classes produce the expected output. Let's look at a simple example:
 
@@ -431,22 +420,22 @@ assert result == 5, f"Expected 5, but got {result}"
 
 In this case, the `assert` statement ensures that the `add_numbers` function correctly adds two numbers by comparing the expected result (5) with the actual result. If they don't match, an `AssertionError` is raised, indicating a potential bug or unexpected behavior.
 
-#### Conclusion
+### Conclusion
 
 The `assert` statement in Python is a versatile tool that serves various purposes in real-life scenarios. From input validation to debugging, testing, enforcing invariants, and unit testing, `assert` statements provide a means to verify conditions and catch potential issues early. By leveraging `assert`, programmers can improve code quality, ensure correct behavior, and reduce the likelihood of bugs in their applications.
 
 Remember that `assert` statements are primarily intended for debugging and testing purposes and can be disabled in a production environment. Therefore, it's crucial to use them judiciously and consider appropriate error handling mechanisms for production code.
 
 
-### 8. 🌀 Exploiting Parallelism with Python: Multiprocessing vs Multithreading vs Co-routines
+## 8. 🌀 Exploiting Parallelism with Python: Multiprocessing vs Multithreading vs Co-routines
 
 When executing code synchronously or sequentially, each task is processed one after the other. This approach can be limiting, especially when dealing with computationally intensive or time-consuming tasks. To overcome this limitation, parallelism comes into play, allowing multiple tasks to be executed simultaneously. In Python, there are three main techniques for exploiting parallelism: Multiprocessing, Multithreading, and Co-routines. In this article, we'll explore these techniques, understand their differences, and determine their best use cases.
 
-#### Synchronous/Sequential Execution
+### Synchronous/Sequential Execution
 
 Before diving into parallelism, let's briefly discuss synchronous or sequential execution. In this mode, code is executed line by line, and each task must complete before moving on to the next. This approach works well for simple programs, but it becomes inefficient when dealing with time-consuming operations or tasks that can benefit from concurrent processing.
 
-#### IO-Bound Tasks vs CPU-Bound Tasks
+### IO-Bound Tasks vs CPU-Bound Tasks
 
 Before we explore parallelism techniques, it's important to understand the distinction between IO-bound and CPU-bound tasks.
 
@@ -454,7 +443,7 @@ Before we explore parallelism techniques, it's important to understand the disti
 
 - **CPU-Bound Tasks**: These tasks heavily rely on the CPU for processing and computation. Examples include complex mathematical calculations, image/video processing, or simulations. CPU-bound tasks can benefit from parallelism by utilizing multiple CPU cores to speed up execution.
 
-#### Multiprocessing for CPU-Bound Tasks
+### Multiprocessing for CPU-Bound Tasks
 
 Multiprocessing is a technique that involves running multiple processes simultaneously to achieve parallel execution. Each process has its own memory space, allowing them to execute independently. This technique is well-suited for CPU-bound tasks, as it takes advantage of multiple CPU cores.
 
@@ -476,7 +465,7 @@ if __name__ == "__main__":
 
 By utilizing the `multiprocessing` module, we can spin up multiple processes to distribute CPU-bound tasks across available CPU cores. This allows us to scale the execution speed and improve overall performance.
 
-#### Multithreading for IO-Bound Tasks
+### Multithreading for IO-Bound Tasks
 
 Multithreading is a technique where multiple threads of execution run concurrently within a single process. Each thread shares the same memory space, making data sharing easier. While multithreading can provide parallelism, it's not always suitable for CPU-bound tasks due to Python's Global Interpreter Lock (GIL), which prevents true parallelism for CPU-bound tasks. However, it can be used effectively for IO-bound tasks.
 
@@ -504,7 +493,7 @@ if __name__ == "__main__":
 
 In this example, multiple threads are created to process IO-bound tasks concurrently. Each thread performs its operations independently, taking advantage of idle time during IO operations.
 
-#### Co-routines for Efficient Asynchronous Tasks
+### Co-routines for Efficient Asynchronous Tasks
 
 Co-routines are lightweight, independent units of execution that can be scheduled and paused during their execution. They allow for efficient concurrency without the overhead associated with operating system threads or processes. Co-routines enable us to exploit parallelism by efficiently handling both IO-bound and CPU-bound tasks.
 
@@ -533,13 +522,13 @@ if __name__ == "__main__":
 
 Using `asyncio`, we can define co-routines with the `async` keyword, enabling them to be paused and resumed during execution. Co-routines provide a more efficient approach to parallelism, allowing for both IO-bound and CPU-bound tasks to be handled effectively.
 
-#### Simplifying Co-routine Development with `async`/`await`
+### Simplifying Co-routine Development with `async`/`await`
 
 Python 3.5 introduced the `async` and `await` keywords, simplifying the development of co-routines. `async` is used to define a co-routine, and `await` is used to suspend execution until the awaited operation completes.
 
 `async`/`await` syntax simplifies the handling of asynchronous tasks, making the code more readable and reducing complexity. It allows for straightforward development of highly concurrent and efficient programs.
 
-#### Comparison and Use Cases
+### Comparison and Use Cases
 
 To summarize the different techniques:
 
@@ -554,18 +543,18 @@ By leveraging parallelism, Python developers can significantly improve the perfo
 Remember, each technique has its own considerations and trade-offs, so choose the approach that best suits your specific requirements and use cases. Happy parallel programming in Python!
 
 
-#### Video Resources
+### Video Resources
 
 - [Making multiple HTTP requests using Python (synchronous, multiprocessing, multithreading, asyncio)](https://youtu.be/R4Oz8JUuM4s) by [Indian Pythonista](https://www.youtube.com/@IndianPythonista)
 - [Python Multiprocessing Tutorial: Run Code in Parallel Using the Multiprocessing Module](https://youtu.be/fKl2JW_qrso) by [Corey Schafer](https://www.youtube.com/@coreyms)
 - [Python Threading Tutorial: Run Code Concurrently Using the Threading Module](https://youtu.be/IEEhzQoKtQU) by [Corey Schafer](https://www.youtube.com/@coreyms)
 
 
-### 9. 🤸 Understanding Python Typing and Type Hints with MyPy and VS Code Support
+## 9. 🤸 Understanding Python Typing and Type Hints with MyPy and VS Code Support
 
 Python is a dynamically typed language, meaning variables do not require explicit type declarations. However, with the introduction of type hints in Python 3.5 and the support of tools like MyPy and VS Code, developers can now add static type information to their code, enhancing readability, maintainability, and catching potential type-related bugs.
 
-#### Python Typing and Type Hints
+### Python Typing and Type Hints
 
 Type hints in Python allow developers to provide information about the expected types of variables, function arguments, and return values. While type hints are optional and do not affect the runtime behavior of the code, they serve as documentation and enable static type checking tools to analyze the code for potential type-related errors.
 
@@ -578,7 +567,7 @@ def add_numbers(a: int, b: int) -> int:
 
 In this code snippet, type hints are used to indicate that both `a` and `b` should be of type `int`, and the function should return an `int`. These type hints provide clarity about the expected types, making the code more self-explanatory and enabling static analysis tools to detect type inconsistencies.
 
-#### MyPy - Static Type Checker for Python
+### MyPy - Static Type Checker for Python
 
 MyPy is a popular static type checker for Python that can analyze code with type hints and detect potential type errors without running the program. It helps catch common mistakes and allows developers to find type-related bugs early in the development process.
 
@@ -590,7 +579,7 @@ mypy your_code.py
 
 If there are any type errors or inconsistencies in your code, MyPy will provide detailed error messages and suggestions for fixing them. This helps ensure that your code aligns with the specified types, improving code quality and reliability.
 
-#### VS Code Support for Type Hints
+### VS Code Support for Type Hints
 
 Visual Studio Code (VS Code) is a popular code editor with excellent support for Python and type hints. With the help of various extensions, such as the Python extension and the Pyright extension, developers can take advantage of advanced type checking features directly within the editor.
 
@@ -598,7 +587,7 @@ Once you have the necessary extensions installed, VS Code will automatically ana
 
 Additionally, VS Code offers features like autocompletion and hover information based on type hints, enabling you to write code faster and with fewer errors. It improves the development experience and encourages best practices in using type hints.
 
-#### Benefits of Type Hints and Tooling Support
+### Benefits of Type Hints and Tooling Support
 
 The use of type hints and tools like MyPy and VS Code support offer several advantages:
 
@@ -610,22 +599,22 @@ The use of type hints and tools like MyPy and VS Code support offer several adva
 
 4. **Collaboration and Documentation**: Type hints serve as documentation for developers, making it easier to understand and collaborate on codebases. They can also generate API documentation automatically, providing clear guidance for users of your code.
 
-#### Embrace the Power of Type Hints
+### Embrace the Power of Type Hints
 
 Type hints and the associated tooling support, such as MyPy and VS Code, offer powerful ways to enhance your Python code. By providing static type information, you can improve code quality, catch bugs early, and enjoy a more productive development experience. Embrace type hints and the available tooling to write more robust and maintainable Python code.
 
 
 
-#### Resources
+### Resources
 
 - [Python Types Intro](https://fastapi.tiangolo.com/python-types/) from [FastAPI docs](https://fastapi.tiangolo.com/)
 
 
-### 10. 🗄️ Python Persistence: Pickling and SQLite
+## 10. 🗄️ Python Persistence: Pickling and SQLite
 
 Python provides several mechanisms for data persistence, allowing you to store and retrieve data across different program executions. Two commonly used methods for persistence are pickling and SQLite. Let's explore these techniques briefly.
 
-#### Pickling
+### Pickling
 
 Pickling is a Python-specific way of serializing and deserializing Python objects. It allows you to convert complex objects into a byte stream that can be stored in a file or transferred over a network. The `pickle` module in Python provides the necessary functions for pickling and unpickling objects.
 
@@ -650,7 +639,7 @@ Here, the `pickle.dump()` function is used to pickle the `data` list and store i
 
 Pickling is a convenient way to store and retrieve Python objects, but it's important to note that it can have security implications if used with untrusted data. Therefore, it's recommended to use pickling only in trusted environments.
 
-#### SQLite
+### SQLite
 
 SQLite is a lightweight and embedded relational database engine that is widely used in Python applications. It provides a simple and efficient way to store and query structured data without requiring a separate database server. Python includes the `sqlite3` module, which allows seamless interaction with SQLite databases.
 
@@ -686,7 +675,7 @@ In this code, we first connect to the SQLite database file named `database.db`. 
 
 SQLite provides a SQL-based interface, making it easy to work with structured data. It supports a wide range of SQL operations, including creating tables, inserting data, querying, and more. It's a reliable and efficient choice for many small to medium-sized applications.
 
-#### Choosing the Right Persistence Method
+### Choosing the Right Persistence Method
 
 When deciding between pickling and SQLite for data persistence, consider the nature of your data and the requirements of your application. Pickling is suitable for storing and retrieving Python objects with their full state intact, while SQLite is better suited for structured data and complex querying needs.
 
@@ -695,42 +684,3 @@ If you need to store and retrieve complex Python objects without the need for ad
 Pickling and SQLite are just two of the many options available for data persistence in Python. Depending on your specific needs, you may explore other alternatives, such as using file systems, NoSQL databases, or ORM frameworks.
 
 Remember to evaluate the trade-offs of each persistence method, considering factors like performance, scalability, security, and the complexity of your data model. By choosing the right persistence technique, you can ensure that your data is stored effectively and can be retrieved efficiently in your Python applications.
-
-
-## Upcoming Events
-
-
-| Event Name       | Date    | Location  | URL                       |
-|------------------|---------|-----------|---------------------------|
-| PyCon 2023       | Sept 29 To Oct 2 | HYDRABAD  | [Website](https://in.pycon.org/2023/) |
-
-
-Stay updated with the latest events and conferences in the Python
-community. Mark your calendars and don’t miss out on these exciting
-opportunities to learn, network, and engage with fellow Python
-enthusiasts!
-
-
-
-Contact
--------
-
-Sure! Here's the text formatted in proper Markdown format:
-
-If you have any questions or need further assistance, feel free to reach out to us at [pythonworldhelp@gmail.com](mailto:pythonworldhelp@gmail.com) or join the discussion on our [GitHub Discussions](https://github.com/Python-World/newsletter/discussions) board.
-
-
-## Contributors
-
-
-We would like to express our sincere gratitude to the following
-contributors who have made valuable contributions to this edition of the
-Python-World Newsletter:
-
-- [Ravishankar Chavare](https://github.com/chavarera/)
-- [Aahnik Daw](https://github.com/aahnik/)
-
-
-Thank you for your dedication and for enriching the Python community
-with your valuable insights, code snippets, and contributions! Happy
-coding! 🐍✨

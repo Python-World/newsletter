@@ -3,6 +3,8 @@
 .. toctree::
    :maxdepth: 4
     
+    2023 Augest - Week 32 <2023/WEEK_32.md>
+    2023 Augest - Week 31 <2023/WEEK_31.md>
     2023 July - Week 30 <2023/WEEK_30.md>
     2023 July - Week 29 <2023/WEEK_29.md>
     2023 July - Week 28 <2023/WEEK_28.md>
