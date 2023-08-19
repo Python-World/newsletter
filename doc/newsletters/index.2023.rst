@@ -3,12 +3,13 @@
 .. toctree::
    :maxdepth: 4
     
-    2023 Augest - Week 32 <2023/WEEK_32.md>
-    2023 Augest - Week 31 <2023/WEEK_31.md>
-    2023 July - Week 30 <2023/WEEK_30.md>
-    2023 July - Week 29 <2023/WEEK_29.md>
-    2023 July - Week 28 <2023/WEEK_28.md>
-    2023 July - Week 27 <2023/WEEK_27.md>
-    2023 June - Week 26 <2023/WEEK_26.rst>
-    2023 June - Week 25 <2023/WEEK_25.rst>
+    Augest - Week 33 <2023/WEEK_33.md>
+    Augest - Week 32 <2023/WEEK_32.md>
+    Augest - Week 31 <2023/WEEK_31.md>
+    July - Week 30 <2023/WEEK_30.md>
+    July - Week 29 <2023/WEEK_29.md>
+    July - Week 28 <2023/WEEK_28.md>
+    July - Week 27 <2023/WEEK_27.md>
+    June - Week 26 <2023/WEEK_26.rst>
+    June - Week 25 <2023/WEEK_25.rst>
     
