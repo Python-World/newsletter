@@ -2,7 +2,7 @@
 # Week 33 - Augest 2023
 
 
-##  📊 Understanding Underscores in Numeric Literals
+## 1. 📊 Understanding Underscores in Numeric Literals
 
 Python 3.6 introduced a delightful feature that allows you to use underscores in numeric literals. This feature has a simple yet impactful purpose: to enhance the readability of large numbers. By strategically placing underscores, you can visually separate the digits into more manageable groups, making the code easier to comprehend at a glance.
 
@@ -44,7 +44,7 @@ hex_num = 0x1A_3B_5F_2D
 
 
 
-## 📜 Text Wrapping with Python's Textwrap Module
+## 2. 📜 Text Wrapping with Python's Textwrap Module
 
 Have you ever struggled with making your text fit within a specific width while preserving readability? The `textwrap` module comes to the rescue! It allows you to effortlessly format paragraphs, strings, or even code snippets to fit a certain width, all while ensuring proper line breaks and alignment.
 
@@ -96,7 +96,7 @@ Python-World Newsletter brings you the latest Python tips and tricks to elevate 
 
 
 
-## 🌐 Exploring IP Address Manipulation with Python's `ipaddress` Module
+## 3. 🌐 Exploring IP Address Manipulation with Python's `ipaddress` Module
 
 IP addresses are the backbone of the internet, enabling devices to communicate across the digital landscape. The `ipaddress` module provides an elegant and efficient way to handle IP addresses, both IPv4 and IPv6, within your Python code.
 
@@ -142,7 +142,7 @@ print(network.broadcast_address)  # 192.168.0.255
 
 
 
-## 🏁 Graceful Script Exit with `atexit` in Python
+## 4. 🏁 Graceful Script Exit with `atexit` in Python
 
 Have you ever wished for a way to ensure that certain cleanup tasks or actions are performed reliably when your Python script ends, regardless of whether it finishes normally or encounters an exception? The `atexit` module is here to grant your wish!
 
@@ -223,7 +223,7 @@ atexit.register(close_connections)
 💡 **Exception Handling:** Remember that `atexit` functions are also called in case of exceptions. Make sure your cleanup code handles exceptions gracefully.
 
 
-## 🔒 Safeguarding Data with Python's `hashlib` Module
+## 5. 🔒 Safeguarding Data with Python's `hashlib` Module
 
 In a digital world teeming with sensitive information, ensuring the integrity and security of data is paramount. Python's `hashlib` module equips you with cryptographic hash functions to create unique fingerprints of data, aiding in verification and protection against tampering.
 
