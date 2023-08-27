@@ -3,6 +3,7 @@
 .. toctree::
    :maxdepth: 4
     
+    Augest - Week 34 <2023/WEEK_34.md>
     Augest - Week 33 <2023/WEEK_33.md>
     Augest - Week 32 <2023/WEEK_32.md>
     Augest - Week 31 <2023/WEEK_31.md>
