@@ -1,0 +1,919 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="2022" href="../index.2022.html" /><link rel="prev" title="Week 26 - Jully 2023" href="WEEK_26.html" />
+
+    <!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19 -->
+        <title>Week 25 - June 2023 - Python-World Newsletter</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_contributors.css?v=f079e67e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Python-World Newsletter</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Python-World Newsletter</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upcoming_events.html">Upcoming Events</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.2023.html">2023</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WEEK_35.html"> September - Week 35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_34.html"> Augest - Week 34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_33.html"> Augest - Week 33</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_32.html"> Augest - Week 32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_31.html"> Augest - Week 31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_30.html"> July - Week 30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_29.html"> July - Week 29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_28.html"> July - Week 28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_27.html"> July - Week 27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_26.html"> June - Week 26</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#"> June - Week 25</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.2022.html">2022</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/WEEK_1.html"> 2022 Jan - Week 1</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="week-25-june-2023">
+<h1>Week 25 - June 2023<a class="headerlink" href="#week-25-june-2023" title="Link to this heading">#</a></h1>
+<section id="power-of-the-repr-function-in-python">
+<h2>1. 🐍 Power of the “repr” function in python.<a class="headerlink" href="#power-of-the-repr-function-in-python" title="Link to this heading">#</a></h2>
+<p>🐍 Python developers, let’s dive into the fascinating world of the
+“repr” function! 🎉</p>
+<p>⚡️ Have you ever encountered a situation where “print” gives you a
+different result than “repr”? Let me show you the magic of “repr” in
+such scenarios.</p>
+<p>🔍 Imagine you have a complex object with intricate internal state. When
+you use “print” to display it, you might get an output that doesn’t
+reveal the full picture. But fear not! “repr” comes to the rescue.</p>
+<p>💡 The “repr” function provides a detailed and unambiguous string
+representation of an object, perfect for debugging and understanding its
+internals.</p>
+<p>🌟 Let’s consider a complex example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printing using print:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>  <span class="c1"># Output: 2023-06-22 15:30:45.123456</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Printing using repr:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">now</span><span class="p">))</span>  <span class="c1"># Output: datetime.datetime(2023, 6, 22, 15, 30, 45, 123456)</span>
+</pre></div>
+</div>
+<p>🔎 Notice the difference? While “print” gives us a more human-readable
+representation, “repr” provides an exact and detailed view of the
+object.</p>
+<p>🎯 “repr” is a valuable tool when debugging complex data structures or
+objects with custom implementations. It helps us uncover hidden details
+and understand the inner workings of our code.</p>
+<p>💡 So, remember to leverage the power of “repr” whenever you encounter
+complex objects that need thorough inspection!</p>
+<p>✨ Let’s embrace “repr” and unlock new levels of debugging and
+understanding in our Python projects. Happy coding, everyone! 💻</p>
+</section>
+<section id="enhancing-console-output-with-ansi-color-codes">
+<h2>2. 🌈 Enhancing console output with ANSI color codes.<a class="headerlink" href="#enhancing-console-output-with-ansi-color-codes" title="Link to this heading">#</a></h2>
+<p>Do you want to add some pizzazz to your Python console output? 💥 Say
+hello to ANSI escape codes! 🎨✨</p>
+<p>ANSI escape codes are special character sequences that allow you to
+change the color and formatting of text in the console or terminal.
+Let’s take a look at how you can use them in Python to bring your
+console output to life! 🚀</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ANSI color codes</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span>
+<span class="n">RED</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[31m&quot;</span>
+<span class="n">GREEN</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[32m&quot;</span>
+<span class="n">YELLOW</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[33m&quot;</span>
+<span class="n">BLUE</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[34m&quot;</span>
+<span class="n">MAGENTA</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[35m&quot;</span>
+<span class="n">CYAN</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[36m&quot;</span>
+<span class="n">WHITE</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[37m&quot;</span>
+
+<span class="c1"># Example usage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">RED</span> <span class="o">+</span> <span class="s2">&quot;This text is red.&quot;</span> <span class="o">+</span> <span class="n">RESET</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">GREEN</span> <span class="o">+</span> <span class="s2">&quot;This text is green.&quot;</span> <span class="o">+</span> <span class="n">RESET</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">&quot;This text is yellow.&quot;</span> <span class="o">+</span> <span class="n">RESET</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BLUE</span> <span class="o">+</span> <span class="s2">&quot;This text is blue.&quot;</span> <span class="o">+</span> <span class="n">RESET</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MAGENTA</span> <span class="o">+</span> <span class="s2">&quot;This text is magenta.&quot;</span> <span class="o">+</span> <span class="n">RESET</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CYAN</span> <span class="o">+</span> <span class="s2">&quot;This text is cyan.&quot;</span> <span class="o">+</span> <span class="n">RESET</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">WHITE</span> <span class="o">+</span> <span class="s2">&quot;This text is white.&quot;</span> <span class="o">+</span> <span class="n">RESET</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With just a few lines of code, you can transform your console output
+into a vibrant display of colors. 🌈✨ Imagine the possibilities! 🎉</p>
+<p>However, keep in mind that ANSI escape codes may not work on all
+terminals or console emulators, especially on Windows. But don’t worry,
+Windows users can achieve similar effects by using the <code class="docutils literal notranslate"><span class="pre">colorama</span></code>
+library. Simply install it with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">colorama</span></code> and modify the
+code as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">Fore</span><span class="p">,</span> <span class="n">Style</span>
+
+<span class="c1"># Example usage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">RED</span> <span class="o">+</span> <span class="s2">&quot;This text is red.&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="s2">&quot;This text is green.&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">&quot;This text is yellow.&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="s2">&quot;This text is blue.&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">MAGENTA</span> <span class="o">+</span> <span class="s2">&quot;This text is magenta.&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">CYAN</span> <span class="o">+</span> <span class="s2">&quot;This text is cyan.&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">WHITE</span> <span class="o">+</span> <span class="s2">&quot;This text is white.&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you can enjoy colorful console output on any platform! 🎉🎉</p>
+<p>So go ahead and make your Python console output stand out from the
+crowd. Impress your colleagues and friends with eye-catching displays of
+information. 🌟✨</p>
+<p>Have fun experimenting with ANSI color codes in Python, and let your
+imagination run wild! 🚀🐍</p>
+</section>
+<section id="partial-method-in-python">
+<h2>3. 🔀 Partial method in python<a class="headerlink" href="#partial-method-in-python" title="Link to this heading">#</a></h2>
+<p>Partial methods are a fascinating feature in Python that allow you to
+create new methods from existing ones by pre-filling some of the
+arguments. This enables you to customize and specialize functions
+without the need for repetitive code. Let’s explore this concept
+further! 💡🔧</p>
+<p>Imagine you have a function with multiple arguments, and you frequently
+call it with some fixed values for some of the parameters. Instead of
+passing those values every time you call the function, you can use
+partial methods to create a new function with those arguments already
+filled in. This can make your code more concise and easier to read. 🧩✨</p>
+<p>In Python, you can utilize the <code class="docutils literal notranslate"><span class="pre">functools</span></code> module to create partial
+methods. The <code class="docutils literal notranslate"><span class="pre">functools</span></code> module provides the <code class="docutils literal notranslate"><span class="pre">partial</span></code> function,
+which takes a callable and any number of arguments or keyword arguments.
+It returns a new partial object, which can be called as a regular
+function. 💻🔍</p>
+<p>Here’s an example to illustrate the concept: 📝</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="n">say_hello</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">greet</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>  <span class="c1"># Output: Hello, Alice!</span>
+<span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>    <span class="c1"># Output: Hello, Bob!</span>
+</pre></div>
+</div>
+<p>In the example above, we defined a <code class="docutils literal notranslate"><span class="pre">greet</span></code> function that takes two
+arguments: <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">greeting</span></code>. By using <code class="docutils literal notranslate"><span class="pre">partial</span></code>, we created a
+new function called <code class="docutils literal notranslate"><span class="pre">say_hello</span></code>, where the <code class="docutils literal notranslate"><span class="pre">greeting</span></code> argument is
+already set to “Hello”. Now, whenever we call <code class="docutils literal notranslate"><span class="pre">say_hello</span></code>, we only
+need to provide the <code class="docutils literal notranslate"><span class="pre">name</span></code> argument. 👋👋</p>
+<p>Partial methods are particularly useful when working with libraries or
+frameworks that require callback functions with predefined arguments.
+Instead of writing separate functions for each callback, you can use
+partial methods to create specialized callbacks without duplicating
+code. 📚🧪</p>
+<p>Remember that partial methods are not limited to positional arguments
+only; you can also use them with keyword arguments. Additionally, you
+can modify or override any of the pre-filled arguments when calling the
+partial method, providing you with even more flexibility. 🎛️🔀</p>
+</section>
+<section id="encoding-and-decoding-using-base64">
+<h2>4. 🔑 Encoding and Decoding using Base64<a class="headerlink" href="#encoding-and-decoding-using-base64" title="Link to this heading">#</a></h2>
+<p>Base64 encoding is commonly used when you need to represent binary data,
+such as images or files, as ASCII text. It converts binary data into a
+string of characters that are safe to transmit or store, ensuring
+compatibility across different systems and protocols. Python provides a
+convenient way to perform base64 encoding and decoding using the
+built-in <code class="docutils literal notranslate"><span class="pre">base64</span></code> module. 📚🔡</p>
+<p>Let’s take a look at an example to see how base64 encoding and decoding
+work: 🖥️🔑</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="c1"># Encoding binary data to base64</span>
+<span class="n">data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;Python-World&quot;</span>
+<span class="n">encoded_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">)</span>  <span class="c1"># Output: b&#39;UHl0aG9uLVdvcmxk&#39;</span>
+
+<span class="c1"># Decoding base64 data to binary</span>
+<span class="n">decoded_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decoded_data</span><span class="p">)</span>  <span class="c1"># Output: b&#39;Python-World&#39;</span>
+</pre></div>
+</div>
+<p>In the example above, we imported the <code class="docutils literal notranslate"><span class="pre">base64</span></code> module and encoded the
+binary data “Python-World” using <code class="docutils literal notranslate"><span class="pre">base64.b64encode()</span></code>. The result,
+<code class="docutils literal notranslate"><span class="pre">encoded_data</span></code>, is a byte string representing the base64 encoded
+version of the data. When printing <code class="docutils literal notranslate"><span class="pre">encoded_data</span></code>, the <code class="docutils literal notranslate"><span class="pre">b</span></code> prefix
+indicates that it is a byte string. 📜🔢</p>
+<p>To decode the base64 data back into its original binary form, we used
+<code class="docutils literal notranslate"><span class="pre">base64.b64decode()</span></code> and assigned the result to <code class="docutils literal notranslate"><span class="pre">decoded_data</span></code>.
+Printing <code class="docutils literal notranslate"><span class="pre">decoded_data</span></code> shows that it successfully restored the
+original binary data. 🔄🔤</p>
+<p>Base64 encoding and decoding have various applications, including data
+transmission over email, storage of binary data in JSON or XML formats,
+and handling binary data in network protocols. Understanding base64
+encoding is essential when working with data that needs to be safely
+represented as text. 📡📦</p>
+<p>Python’s <code class="docutils literal notranslate"><span class="pre">base64</span></code> module provides additional functionalities, such as
+handling URL-safe base64 encoding and decoding, as well as encoding and
+decoding using different character sets. Exploring these options can
+further enhance your encoding and decoding capabilities. 🌐🔠</p>
+</section>
+<section id="understanding-hooks-in-requests">
+<h2>5. 🎣 Understanding hooks in requests<a class="headerlink" href="#understanding-hooks-in-requests" title="Link to this heading">#</a></h2>
+<p>Hooks in the <code class="docutils literal notranslate"><span class="pre">requests</span></code> module provide a mechanism to intercept and
+modify the request and response flow. They enable you to inject your own
+code at various stages of the request lifecycle, empowering you to
+perform custom processing, logging, authentication, error handling, and
+much more. Hooks are a powerful tool to enhance and tailor your HTTP
+requests according to your specific needs. 💡🔌</p>
+<h4><p>Types of Hooks:</p>
+</h4><ol class="arabic simple">
+<li><p>Response Hooks:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">response</span></code>: Executed after a response is received, regardless of
+the response status.</p></li>
+</ul>
+</li>
+</ol>
+<p>These hooks provide immense flexibility and control over your requests,
+enabling you to customize and augment the behavior as per your
+requirements. ⚙️🎛️</p>
+<h4><p>🎯 Use Cases for Hooks:</p>
+</h4><p>Hooks can be employed in various scenarios to enhance the functionality
+of your requests. Some common use cases include:</p>
+<ol class="arabic simple">
+<li><p>Logging: Add logging statements to track the request and response
+details for debugging or analysis purposes.</p></li>
+<li><p>Authentication: Implement custom authentication mechanisms or token
+management.</p></li>
+<li><p>Error Handling: Define actions to be taken when specific exceptions
+occur during the request.</p></li>
+<li><p>Retry Strategies: Implement custom retry logic based on response
+status codes or error conditions.</p></li>
+</ol>
+<h4><p>🌟 Registering Hooks with Specific Requests:</p>
+</h4><p>In addition to registering global hooks, you can also specify hooks as
+keyword parameters when making individual requests using methods like
+<code class="docutils literal notranslate"><span class="pre">get</span></code>, <code class="docutils literal notranslate"><span class="pre">post</span></code>, <code class="docutils literal notranslate"><span class="pre">put</span></code>, etc. This allows you to define hooks
+specifically for a particular request and control their execution on a
+per-request basis. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">first_hook</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># Perform custom logic for the first hook</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First hook executed&quot;</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">first_hook</span><span class="o">=</span><span class="s1">&#39;you can pass any value or object&#39;</span>
+
+<span class="k">def</span> <span class="nf">second_hook</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># Perform custom logic for the second hook</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Second hook executed&quot;</span><span class="p">)</span>
+
+<span class="c1"># Make a request with multiple hooks</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.example.com&#39;</span><span class="p">,</span> <span class="n">hooks</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;response&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">first_hook</span><span class="p">,</span> <span class="n">second_hook</span><span class="p">]})</span>
+
+<span class="c1"># Retrive first_hook parameters</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">first_hook</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case, both <code class="docutils literal notranslate"><span class="pre">first_hook</span></code> and <code class="docutils literal notranslate"><span class="pre">second_hook</span></code> will be executed
+for the single request made in the <code class="docutils literal notranslate"><span class="pre">get</span></code> method.</p>
+<h4><p>🚀 Registering Hooks with a Session:</p>
+</h4><p>If you need to maintain state or persist hooks across multiple requests,
+you can use a <code class="docutils literal notranslate"><span class="pre">requests.Session</span></code> object. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">custom_hook</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># Perform custom logic</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Custom hook executed&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Also U can set custom attibute to response object</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">custom_hook_called</span><span class="o">=</span><span class="kc">True</span>
+
+
+<span class="c1"># Create a session and register the custom hook</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">hooks</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">custom_hook</span><span class="p">)</span>
+
+<span class="c1"># Make requests using the session</span>
+<span class="n">response1</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.example.com&#39;</span><span class="p">)</span>
+
+<span class="c1">## Status of custom hooks</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parameter from custom hooks:&quot;</span><span class="p">,</span><span class="n">response1</span><span class="o">.</span><span class="n">custom_hook_called</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">custom_hook</span></code> will be executed for both
+<code class="docutils literal notranslate"><span class="pre">response1</span></code> and <code class="docutils literal notranslate"><span class="pre">response2</span></code>, as they are made using the same
+session.</p>
+</section>
+<section id="linkextractor-in-scrapy">
+<h2>6. 📢 LinkExtractor in Scrapy<a class="headerlink" href="#linkextractor-in-scrapy" title="Link to this heading">#</a></h2>
+<p>🔗 The LinkExtractor class in Scrapy is a powerful tool for extracting
+links from web pages. It provides a convenient way to crawl and scrape
+websites efficiently. Let’s dive into some simple code examples to
+understand how it works.</p>
+<p>📝 Code Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scrapy</span>
+<span class="kn">from</span> <span class="nn">scrapy.crawler</span> <span class="kn">import</span> <span class="n">CrawlerProcess</span>
+<span class="kn">from</span> <span class="nn">scrapy.linkextractors</span> <span class="kn">import</span> <span class="n">LinkExtractor</span>
+
+<span class="k">class</span> <span class="nc">MySpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;example&#39;</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://www.example.com&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="c1"># Instantiate a LinkExtractor object</span>
+        <span class="n">link_extractor</span> <span class="o">=</span> <span class="n">LinkExtractor</span><span class="p">()</span>
+
+        <span class="c1"># Extract links from the response</span>
+        <span class="n">links</span> <span class="o">=</span> <span class="n">link_extractor</span><span class="o">.</span><span class="n">extract_links</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+        <span class="c1"># Process the extracted links</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+            <span class="c1"># Access the URL, text, and other attributes of the link</span>
+            <span class="k">yield</span> <span class="p">{</span>
+                <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">link</span><span class="o">.</span><span class="n">text</span>
+            <span class="p">}</span>
+
+
+
+<span class="c1"># Create a CrawlerProcess instance</span>
+<span class="n">process</span> <span class="o">=</span> <span class="n">CrawlerProcess</span><span class="p">()</span>
+
+<span class="c1"># Add your spider to the CrawlerProcess</span>
+<span class="n">process</span><span class="o">.</span><span class="n">crawl</span><span class="p">(</span><span class="n">MySpider</span><span class="p">)</span>
+
+<span class="c1"># Start the crawling process</span>
+<span class="n">process</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+
+<span class="c1"># Output: &gt; {&#39;url&#39;: &#39;https://www.iana.org/domains/example&#39;, &#39;text&#39;: &#39;More information...&#39;}</span>
+</pre></div>
+</div>
+<p>🔍 In this example, we create a Scrapy spider named <code class="docutils literal notranslate"><span class="pre">MySpider</span></code>. The
+<code class="docutils literal notranslate"><span class="pre">LinkExtractor</span></code> class is imported from <code class="docutils literal notranslate"><span class="pre">scrapy.linkextractors</span></code> to
+handle link extraction.</p>
+<p>🕸️ Inside the <code class="docutils literal notranslate"><span class="pre">parse</span></code> method, we instantiate a <code class="docutils literal notranslate"><span class="pre">LinkExtractor</span></code>
+object. Then, we use the <code class="docutils literal notranslate"><span class="pre">extract_links</span></code> method to extract all links
+from the <code class="docutils literal notranslate"><span class="pre">response</span></code> object.</p>
+<p>🔗 We iterate over the extracted links and access their URL and text
+using the <code class="docutils literal notranslate"><span class="pre">url</span></code> and <code class="docutils literal notranslate"><span class="pre">text</span></code> attributes. You can perform further
+processing or extraction based on your specific needs.</p>
+<p>📥 Finally, we yield a dictionary containing the URL and text of each
+extracted link. You can modify this code to process the links
+differently or store them in any desired format.</p>
+<p>💡 The LinkExtractor class provides many additional options and
+parameters to customize link extraction based on patterns, tags,
+attributes, and more. Make sure to explore the Scrapy documentation for
+more advanced usage.</p>
+</section>
+<section id="itemgetter-in-python">
+<h2>7. 📝 itemgetter in python<a class="headerlink" href="#itemgetter-in-python" title="Link to this heading">#</a></h2>
+<p>🔍 The <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> function in Python is a convenient tool for
+extracting specific elements from iterable objects. It provides a simple
+and efficient way to access and manipulate data. Let’s explore its
+functionality with some simple code examples, including its usage in
+<code class="docutils literal notranslate"><span class="pre">sorted</span></code> with lists, dictionaries, and lists of dictionaries.</p>
+<p>In general, if you need to access specific elements from iterable
+objects and performance is a concern, using <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> is a
+recommended approach. It offers better performance compared to using a
+lambda function, particularly when dealing with large datasets or
+performing operations that need to be executed multiple times.</p>
+<p>📝 Code Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+<span class="c1"># Example 1: Accessing Elements from a List</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">]</span>
+<span class="n">get_second_element</span> <span class="o">=</span> <span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_second_element</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>  <span class="c1"># Output: &#39;banana&#39;</span>
+
+<span class="c1"># Example 2: Accessing Elements from a Dictionary</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
+<span class="n">get_age</span> <span class="o">=</span> <span class="n">itemgetter</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_age</span><span class="p">(</span><span class="n">my_dict</span><span class="p">))</span>  <span class="c1"># Output: 30</span>
+
+<span class="c1"># Example 3: Accessing Multiple Elements from a Tuple</span>
+<span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">get_first_and_last</span> <span class="o">=</span> <span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_first_and_last</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">))</span>  <span class="c1"># Output: (&#39;apple&#39;, &#39;date&#39;)</span>
+
+<span class="c1"># Example 4: Using itemgetter in sorted with a List of Tuples</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">),(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;A-&#39;</span><span class="p">),(</span><span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;B+&#39;</span><span class="p">)]</span>
+<span class="n">sorted_students</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_students</span><span class="p">)</span>
+
+<span class="c1"># Example 5: Using itemgetter in sorted with a Dictionary</span>
+<span class="n">student_grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;John&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;Alice&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;Bob&#39;</span><span class="p">:</span> <span class="s1">&#39;A-&#39;</span><span class="p">,</span><span class="s1">&#39;Carol&#39;</span><span class="p">:</span> <span class="s1">&#39;B+&#39;</span><span class="p">}</span>
+<span class="n">sorted_grades</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">student_grades</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_grades</span><span class="p">)</span>
+
+<span class="c1"># Example 6: Using itemgetter in sorted with a List of Dictionaries</span>
+<span class="n">people</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">sorted_people</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_people</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>🔢 In these examples, we import the <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> function from the
+<code class="docutils literal notranslate"><span class="pre">operator</span></code> module to extract specific elements from iterable objects.</p>
+<p>📌 Examples 1, 2, and 3 demonstrate how <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> can be used to
+access elements from a list, dictionary, and tuple, respectively.</p>
+<p>📌 Example 4 showcases the usage of <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> in the <code class="docutils literal notranslate"><span class="pre">sorted</span></code>
+function with a list of tuples. By specifying <code class="docutils literal notranslate"><span class="pre">key=itemgetter(2)</span></code>, the
+<code class="docutils literal notranslate"><span class="pre">sorted</span></code> function sorts the students based on their grade (the third
+element in each tuple).</p>
+<p>📌 Example 5 illustrates how <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> can be used with the
+<code class="docutils literal notranslate"><span class="pre">sorted</span></code> function with a dictionary. We convert the dictionary items
+into a list of tuples using the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method and then sort the
+tuples based on the grades using <code class="docutils literal notranslate"><span class="pre">key=itemgetter(1)</span></code>.</p>
+<p>📌 Example 6 demonstrates the usage of <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> in the <code class="docutils literal notranslate"><span class="pre">sorted</span></code>
+function with a list of dictionaries. By specifying
+<code class="docutils literal notranslate"><span class="pre">key=itemgetter('age')</span></code>, the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function sorts the list of
+dictionaries based on the ‘age’ key, resulting in a sorted list of</p>
+<p>people based on their age.</p>
+<p>💡 The <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> function is a powerful tool for accessing and
+sorting specific elements from iterable objects. It offers flexibility
+and performance benefits, making it a valuable addition to your Python
+toolkit.</p>
+</section>
+<section id="fetching-device-name-using-platform">
+<h2>8. 🖥️ Fetching device name using platform<a class="headerlink" href="#fetching-device-name-using-platform" title="Link to this heading">#</a></h2>
+<p>🔍 The <code class="docutils literal notranslate"><span class="pre">platform</span></code> module in Python provides a convenient way to access
+information about the platform your code is running on. Let’s dive into
+how you can use this module to fetch the device name:</p>
+<p>🔦 <strong>Fetching Device Name:</strong> The <code class="docutils literal notranslate"><span class="pre">platform</span></code> module’s <code class="docutils literal notranslate"><span class="pre">node()</span></code>
+function returns the device’s network name, which is often the device’s
+hostname. This can provide a reasonable approximation of the device name
+in many cases.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="n">device_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">node</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Device Name: </span><span class="si">{</span><span class="n">device_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>🖥️💻📱 The <code class="docutils literal notranslate"><span class="pre">device_name</span></code> variable will contain the name of the device
+your code is running on, which could be the hostname of the machine or a
+recognizable identifier for the device.</p>
+<p>🚀 <strong>Platform Information:</strong> The <code class="docutils literal notranslate"><span class="pre">platform</span></code> module can provide more
+than just the device name. You can also access other platform-related
+information, such as the operating system, Python implementation, and
+architecture.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="c1"># Get the operating system name</span>
+<span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Operating System: </span><span class="si">{</span><span class="n">os_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the release version of the operating system</span>
+<span class="n">os_release</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Release Version: </span><span class="si">{</span><span class="n">os_release</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the version of the operating system</span>
+<span class="n">os_version</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">version</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OS Version: </span><span class="si">{</span><span class="n">os_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the machine type</span>
+<span class="n">machine_type</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">machine</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Machine Type: </span><span class="si">{</span><span class="n">machine_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the processor name or identifier</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processor: </span><span class="si">{</span><span class="n">processor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the version of Python</span>
+<span class="n">python_version</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python Version: </span><span class="si">{</span><span class="n">python_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the name of the Python implementation</span>
+<span class="n">python_implementation</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_implementation</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python Implementation: </span><span class="si">{</span><span class="n">python_implementation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the compiler used to build Python</span>
+<span class="n">python_compiler</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_compiler</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python Compiler: </span><span class="si">{</span><span class="n">python_compiler</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the architecture and bitness of the operating system</span>
+<span class="n">architecture</span><span class="p">,</span> <span class="n">bitness</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">architecture</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Architecture: </span><span class="si">{</span><span class="n">architecture</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bitness: </span><span class="si">{</span><span class="n">bitness</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the network name of the device</span>
+<span class="n">device_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">node</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Device Name: </span><span class="si">{</span><span class="n">device_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Output:</span>
+<span class="sd">Operating System: Windows</span>
+<span class="sd">Release Version: 11</span>
+<span class="sd">OS Version: 12.0.22334621</span>
+<span class="sd">Machine Type: AMD64</span>
+<span class="sd">Processor: AMD64 Family 21 Model 111 Stepping 2, AuthenticAMD</span>
+<span class="sd">Python Version: 3.11.3</span>
+<span class="sd">Python Implementation: CPython</span>
+<span class="sd">Python Compiler: MSC v.1934 64 bit (AMD64)</span>
+<span class="sd">Architecture: 64bit</span>
+<span class="sd">Bitness: WindowsPE</span>
+<span class="sd">Device Name: DESKTOP-KJK</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>📡 <strong>Platform-Specific Functionality:</strong> By knowing the device name or
+platform, you can tailor your code’s behavior to provide
+platform-specific functionality. For example, you can enable or disable
+certain features, adjust settings, or optimize code paths based on the
+device or platform your code is running on.</p>
+<p>💡 Fetching the device name using the <code class="docutils literal notranslate"><span class="pre">platform</span></code> module allows you to
+adapt your code to different devices and platforms. It opens up
+possibilities for building cross-platform applications, device-specific
+optimizations, and customized user experiences.</p>
+</section>
+<section id="package-your-app-into-a-executable-file-using-zipapp">
+<h2>9. 🌟 Package your app into a executable file using zipapp<a class="headerlink" href="#package-your-app-into-a-executable-file-using-zipapp" title="Link to this heading">#</a></h2>
+<p>🔍 <strong>What is Zipapp?</strong> Zipapp is a module introduced in Python 3.5 that
+enables you to package your Python application along with its
+dependencies into a single executable ZIP file. This ZIP file can be
+executed directly, making it convenient to distribute your application
+as a standalone package.</p>
+<p>🚀 <strong>Key Features and Benefits:</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Simplified Distribution:</dt><dd><p>With Zipapp, you can distribute your Python application as a single file,
+eliminating the need for users to install dependencies separately.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Easy Execution:</dt><dd><p>The executable ZIP file can be run directly without
+the need for a Python interpreter or additional setup.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Cross-Platform Compatibility:</dt><dd><p>Zipapp packages are portable and can
+be executed on different operating systems, making it easier to
+distribute your application across platforms.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>🔧 <strong>Creating a Zipapp:</strong></p>
+<p>Creating a zipapp is straightforward.Here’s a
+simple example create <code class="docutils literal notranslate"><span class="pre">app.py</span></code> file in <code class="docutils literal notranslate"><span class="pre">myapp</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># myapp/app.py</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, Python-World!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To create the zipapp</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>zipapp<span class="w"> </span>myapp<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;app:main&quot;</span>
+</pre></div>
+</div>
+<p>In this example, we’re creating a zipapp named <code class="docutils literal notranslate"><span class="pre">myapp.pyz</span></code>, specifying
+the <code class="docutils literal notranslate"><span class="pre">app.py</span></code> file as the entry point .</p>
+<p>🚀 <strong>Executing the Zipapp:</strong></p>
+<p>Once you have the zipapp file, you can run
+it like any other executable. Here’s an example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>myapp.pyz
+Hello,<span class="w"> </span>Python-World!
+</pre></div>
+</div>
+<p>💡 <strong>Use Cases and Considerations:</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>Distribution of Command-Line Tools:</em></dt><dd><p>Zipapp is an excellent choice for packaging and distributing
+command-line tools written in Python.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Portable Applications:</em></dt><dd><p>If you want to create a portable Python application that can be run on
+different systems without requiring installation, zipapp can be a great
+solution.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Version Management:</em></dt><dd><p>Zipapp can help in managing and
+distributing specific versions of your application, ensuring consistent
+execution across environments.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Zipapp is a powerful tool for simplifying the distribution and execution
+of your Python applications. It provides a convenient way to package
+your code and dependencies into a single executable file, making it
+easier for users to run your application without complex setup
+processes.</p>
+</section>
+<section id="secure-user-input-with-getpass">
+<h2>10. 🔧 Secure User Input with getpass()<a class="headerlink" href="#secure-user-input-with-getpass" title="Link to this heading">#</a></h2>
+<p>🔎 When it comes to handling sensitive user input, such as passwords or other confidential information, security is of utmost importance.the <cite>getpass()</cite> method, which provides a secure way to accept user input without displaying it on the screen.</p>
+<p><strong>What is getpass()?</strong></p>
+<p>The <cite>getpass()</cite> method is a part of the Python <cite>getpass</cite> module. It is used to prompt the user for input, such as a password, and securely captures the input without echoing it back to the screen.</p>
+<p>🚀 <strong>Key Features and Benefits:</strong></p>
+<ul class="simple">
+<li><p><strong>Secure User Input:</strong> The <cite>getpass()</cite> method ensures that sensitive user input, like passwords, remains hidden, reducing the risk of unauthorized access.</p></li>
+<li><p><strong>Cross-Platform Compatibility:</strong> The method works consistently across different operating systems, providing a reliable solution for secure user input.</p></li>
+<li><p><strong>Simplicity of Use:</strong> With a single function call, you can prompt the user for input and retrieve it securely, without the need for complex code.</p></li>
+</ul>
+<p>🔧 <strong>Using getpass():</strong></p>
+<p>Using the <cite>getpass()</cite> method is straightforward. Here’s a simple example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Enter your password: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Password entered:&quot;</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When you run this code, the <cite>getpass()</cite> method will prompt the user to enter a password, and the input will be securely captured without being displayed on the screen.</p>
+<p>💡 <strong>Best Practices:</strong></p>
+<ul class="simple">
+<li><p><strong>Avoid Storing Passwords in Plain Text:</strong> Remember, the <cite>getpass()</cite> method only helps in securely capturing user input. It’s essential to handle the captured passwords carefully and avoid storing them in plain text. Consider using secure password storage mechanisms like hashing and salting.</p></li>
+<li><p><strong>Ensure Proper Error Handling:</strong> Handle exceptions raised by the <cite>getpass()</cite> method to provide meaningful error messages and gracefully handle any issues encountered during user input.</p></li>
+</ul>
+<p>The <cite>getpass()</cite> method is a valuable tool for securely capturing sensitive user input, making it an ideal choice when handling passwords or other confidential information. By using this method, you can enhance the security of your applications and protect user privacy.</p>
+</details><section id="useful-resources">
+<h3>Useful Resources<a class="headerlink" href="#useful-resources" title="Link to this heading">#</a></h3>
+<p>Here are some valuable resources to enhance your Python programming
+skills and stay updated with the latest trends:</p>
+<ul class="simple">
+<li><p><strong>Online Course</strong>: Take your Python web development skills to the
+next level with the “Mastering Flask” course on
+<a class="reference external" href="https://www.pluralsight.com/courses/mastering-flask">Pluralsight</a>.</p></li>
+<li><p><strong>Forum</strong>: Join the vibrant Python community discussions and seek
+help at <a class="reference external" href="https://github.com/Python-World/newsletter/discussions">Python
+Forums</a>.
+Engage with fellow developers, share knowledge, and contribute to the
+Python ecosystem.</p></li>
+</ul>
+<p>Stay curious, keep learning, and make the most of these resources to
+enhance your Python journey!</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../index.2022.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">2022</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="WEEK_26.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Week 26 - Jully 2023</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ravishankar Chavare
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Week 25 - June 2023</a><ul>
+<li><a class="reference internal" href="#power-of-the-repr-function-in-python">1. 🐍 Power of the “repr” function in python.</a></li>
+<li><a class="reference internal" href="#enhancing-console-output-with-ansi-color-codes">2. 🌈 Enhancing console output with ANSI color codes.</a></li>
+<li><a class="reference internal" href="#partial-method-in-python">3. 🔀 Partial method in python</a></li>
+<li><a class="reference internal" href="#encoding-and-decoding-using-base64">4. 🔑 Encoding and Decoding using Base64</a></li>
+<li><a class="reference internal" href="#understanding-hooks-in-requests">5. 🎣 Understanding hooks in requests</a></li>
+<li><a class="reference internal" href="#linkextractor-in-scrapy">6. 📢 LinkExtractor in Scrapy</a></li>
+<li><a class="reference internal" href="#itemgetter-in-python">7. 📝 itemgetter in python</a></li>
+<li><a class="reference internal" href="#fetching-device-name-using-platform">8. 🖥️ Fetching device name using platform</a></li>
+<li><a class="reference internal" href="#package-your-app-into-a-executable-file-using-zipapp">9. 🌟 Package your app into a executable file using zipapp</a></li>
+<li><a class="reference internal" href="#secure-user-input-with-getpass">10. 🔧 Secure User Input with getpass()</a><ul>
+<li><a class="reference internal" href="#useful-resources">Useful Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

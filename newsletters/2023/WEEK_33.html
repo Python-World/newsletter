@@ -1,0 +1,489 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Week 32 - Augest 2023" href="WEEK_32.html" /><link rel="prev" title="Week 34 - Augest 2023" href="WEEK_34.html" />
+
+    <!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19 -->
+        <title>Week 33 - Augest 2023 - Python-World Newsletter</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_contributors.css?v=f079e67e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Python-World Newsletter</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Python-World Newsletter</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upcoming_events.html">Upcoming Events</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.2023.html">2023</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WEEK_35.html"> September - Week 35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_34.html"> Augest - Week 34</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#"> Augest - Week 33</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_32.html"> Augest - Week 32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_31.html"> Augest - Week 31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_30.html"> July - Week 30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_29.html"> July - Week 29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_28.html"> July - Week 28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_27.html"> July - Week 27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_26.html"> June - Week 26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_25.html"> June - Week 25</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.2022.html">2022</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/WEEK_1.html"> 2022 Jan - Week 1</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="week-33-augest-2023">
+<h1>Week 33 - Augest 2023<a class="headerlink" href="#week-33-augest-2023" title="Link to this heading">#</a></h1>
+<section id="understanding-underscores-in-numeric-literals">
+<h2>1. 📊 Understanding Underscores in Numeric Literals<a class="headerlink" href="#understanding-underscores-in-numeric-literals" title="Link to this heading">#</a></h2>
+<p>Python 3.6 introduced a delightful feature that allows you to use underscores in numeric literals. This feature has a simple yet impactful purpose: to enhance the readability of large numbers. By strategically placing underscores, you can visually separate the digits into more manageable groups, making the code easier to comprehend at a glance.</p>
+<p>Underscores in numeric literals might seem like a small feature, but they pack a punch when it comes to code readability. They help you avoid errors, reduce confusion, and make your codebase more maintainable. So go ahead, use underscores in your numeric literals and write code that’s not just functional, but also elegant and clear!</p>
+<p><strong>Why Use Underscores?</strong></p>
+<p>🔍 <strong>Clarity:</strong> When dealing with numbers spanning several digits, like monetary values, scientific constants, or long identifiers, underscores serve as virtual separators, preventing potential confusion among the digits.</p>
+<p>🌟 <strong>Readability:</strong> Complex numbers, such as binary or hexadecimal literals, can quickly become unwieldy. By introducing underscores, you can break down these numbers into meaningful sections, making them much more readable.</p>
+<p><strong>Examples in Action</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Without underscores (hard to read)</span>
+<span class="n">large_number</span> <span class="o">=</span> <span class="mi">1000000000</span>
+
+<span class="c1"># With underscores (much clearer)</span>
+<span class="n">large_number</span> <span class="o">=</span> <span class="mi">1_000_000_000</span>
+
+<span class="c1"># Binary literal without underscores</span>
+<span class="n">binary_num</span> <span class="o">=</span> <span class="mb">0b110100101101</span>
+
+<span class="c1"># Binary literal with underscores</span>
+<span class="n">binary_num</span> <span class="o">=</span> <span class="mb">0b1101_0010_1101</span>
+
+<span class="c1"># Hexadecimal literal without underscores</span>
+<span class="n">hex_num</span> <span class="o">=</span> <span class="mh">0x1A3B5F2D</span>
+
+<span class="c1"># Hexadecimal literal with underscores</span>
+<span class="n">hex_num</span> <span class="o">=</span> <span class="mh">0x1A_3B_5F_2D</span>
+</pre></div>
+</div>
+<p><strong>Best Practices</strong></p>
+<p>📝 <strong>Consistency:</strong> Be consistent with your use of underscores. If you choose to use them, stick to the pattern throughout your codebase.</p>
+<p>💡 <strong>Placement:</strong> Place underscores only between digits, not at the beginning or end of a number, and not in locations where the syntax would be invalid.</p>
+</section>
+<section id="text-wrapping-with-python-s-textwrap-module">
+<h2>2. 📜 Text Wrapping with Python’s Textwrap Module<a class="headerlink" href="#text-wrapping-with-python-s-textwrap-module" title="Link to this heading">#</a></h2>
+<p>Have you ever struggled with making your text fit within a specific width while preserving readability? The <code class="docutils literal notranslate"><span class="pre">textwrap</span></code> module comes to the rescue! It allows you to effortlessly format paragraphs, strings, or even code snippets to fit a certain width, all while ensuring proper line breaks and alignment.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">textwrap</span></code> module empowers you to present your text content in a professional and visually appealing manner. Whether you’re working on documentation, emails, or any text-based communication, this module streamlines your formatting process and enhances the overall readability of your content.
+<strong>Why Choose Text Wrapping?</strong></p>
+<p>📚 <strong>Clean Documentation:</strong> When writing documentation or docstrings, it’s crucial to keep your content well-organized and easily digestible. Text wrapping makes sure your text doesn’t spill beyond its designated space, maintaining a neat and professional appearance.</p>
+<p>📝 <strong>Formatted Output:</strong> Whether you’re generating reports or crafting emails, the <code class="docutils literal notranslate"><span class="pre">textwrap</span></code> module lets you create structured and visually appealing text layouts. No more manual line breaks or awkward formatting!</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">textwrap</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Python-World Newsletter brings you the latest Python tips and tricks to elevate your coding game. Stay tuned for tutorials, deep dives, and more!&quot;</span>
+
+<span class="c1"># Wrap the text to fit within 40 characters</span>
+<span class="n">wrapped_text</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">wrapped_text</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;OUTPUT</span>
+
+<span class="sd">Python-World Newsletter brings you the</span>
+<span class="sd">latest Python tips and tricks to elevate</span>
+<span class="sd">your coding game. Stay tuned for</span>
+<span class="sd">tutorials, deep dives, and more!</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;OUTPUT</span>
+<span class="sd">Python-World Newsletter brings you the latest Python tips and tricks to elevate your coding game. Stay tuned for tutorials, deep dives, and more!</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p><strong>Additional Use Cases</strong></p>
+<p>📜 <strong>Code Formatting:</strong> When you’re dealing with code snippets in your documentation, you can ensure that your code maintains its indentation and structure, even when it’s wrapped to fit a specific width.</p>
+<p>💌 <strong>Email Composition:</strong> Need to send well-formatted emails programmatically? Text wrapping ensures your email content appears neat and is easily readable on various devices and email clients.</p>
+<p><strong>Best Practices</strong></p>
+<p>🔍 <strong>Choose the Right Width:</strong> Be mindful of the width you choose. A width that’s too narrow might create excessive line breaks, while a width that’s too wide could defeat the purpose of wrapping.</p>
+<p>💡 <strong>Preserve Intent:</strong> Use the <code class="docutils literal notranslate"><span class="pre">replace_whitespace</span></code> parameter to control how whitespace is handled in wrapped lines, preserving the intended formatting of your text.</p>
+</section>
+<section id="exploring-ip-address-manipulation-with-python-s-ipaddress-module">
+<h2>3. 🌐 Exploring IP Address Manipulation with Python’s <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> Module<a class="headerlink" href="#exploring-ip-address-manipulation-with-python-s-ipaddress-module" title="Link to this heading">#</a></h2>
+<p>IP addresses are the backbone of the internet, enabling devices to communicate across the digital landscape. The <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> module provides an elegant and efficient way to handle IP addresses, both IPv4 and IPv6, within your Python code.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> module elevates your IP address manipulation game by providing a seamless and intuitive way to work with both IPv4 and IPv6 addresses. Whether you’re configuring networks, building security features, or exploring the depths of the internet, this module is your trusted companion.</p>
+<p><strong>Why <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> Module?</strong></p>
+<p>🌐 <strong>Precision Handling:</strong> The <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> module ensures accurate handling of IP addresses, allowing you to perform various operations like validation, comparison, and network calculations with ease.</p>
+<p>🔍 <strong>Readability:</strong> No more manual conversions between dot-decimal notation and integers. The module lets you work with IP addresses directly in a human-readable format.</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipaddress</span>
+
+<span class="c1"># Creating IPv4 and IPv6 objects</span>
+<span class="n">ipv4_address</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv4Address</span><span class="p">(</span><span class="s1">&#39;192.168.0.1&#39;</span><span class="p">)</span>
+<span class="n">ipv6_address</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv6Address</span><span class="p">(</span><span class="s1">&#39;2001:0db8:85a3:0000:0000:8a2e:0370:7334&#39;</span><span class="p">)</span>
+
+<span class="c1"># Check if an address is private</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ipv4_address</span><span class="o">.</span><span class="n">is_private</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ipv6_address</span><span class="o">.</span><span class="n">is_private</span><span class="p">)</span>  <span class="c1"># False</span>
+
+<span class="c1"># Perform subnet calculations</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_network</span><span class="p">(</span><span class="s1">&#39;192.168.0.0/24&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">network_address</span><span class="p">)</span>  <span class="c1"># 192.168.0.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">broadcast_address</span><span class="p">)</span>  <span class="c1"># 192.168.0.255</span>
+</pre></div>
+</div>
+<p><strong>Use Cases</strong></p>
+<p>🖥️ <strong>Network Operations:</strong> The <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> module shines when working with network configurations, such as subnetting, network classification, and routing.</p>
+<p>🛡️ <strong>Security and Access Control:</strong> IP address validation and classification are crucial for access control, firewalls, and security-related tasks.</p>
+<p><strong>Best Practices</strong></p>
+<p>🔐 <strong>Validation:</strong> Always validate user inputs that involve IP addresses to prevent unexpected behavior and security vulnerabilities.</p>
+<p>💡 <strong>Performance:</strong> While the <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> module is powerful, remember that parsing large lists of IP addresses might impact performance. Optimize your code for efficiency.</p>
+</section>
+<section id="graceful-script-exit-with-atexit-in-python">
+<h2>4. 🏁 Graceful Script Exit with <code class="docutils literal notranslate"><span class="pre">atexit</span></code> in Python<a class="headerlink" href="#graceful-script-exit-with-atexit-in-python" title="Link to this heading">#</a></h2>
+<p>Have you ever wished for a way to ensure that certain cleanup tasks or actions are performed reliably when your Python script ends, regardless of whether it finishes normally or encounters an exception? The <code class="docutils literal notranslate"><span class="pre">atexit</span></code> module is here to grant your wish!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">atexit</span></code> module adds a touch of finesse to your script exits by allowing you to perform crucial cleanup operations without fuss. Whether you’re closing files, ending network connections, or tidying up other resources, <code class="docutils literal notranslate"><span class="pre">atexit</span></code> has your back.</p>
+<p><strong>Why Embrace <code class="docutils literal notranslate"><span class="pre">atexit</span></code>?</strong></p>
+<p>🧹 <strong>Effortless Cleanup:</strong> With <code class="docutils literal notranslate"><span class="pre">atexit</span></code>, you can register functions to be executed when your script terminates, allowing you to release resources, close files, or perform other essential cleanup tasks without cluttering your code.</p>
+<p>🏁 <strong>Exit Handling:</strong> No more forgetting to close open files or connections before your script exits unexpectedly. <code class="docutils literal notranslate"><span class="pre">atexit</span></code> ensures that you always leave your script’s environment in a tidy state.</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">atexit</span>
+
+<span class="k">def</span> <span class="nf">exit_handler</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Script is exiting. Performing cleanup tasks...&quot;</span><span class="p">)</span>
+
+<span class="c1"># Register the exit_handler function</span>
+<span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">exit_handler</span><span class="p">)</span>
+
+<span class="c1"># Your script code here</span>
+
+<span class="c1"># The exit_handler function will be called when the script exits</span>
+</pre></div>
+</div>
+<p><strong>More Examples</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Closing Files:</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">atexit</span>
+
+<span class="k">def</span> <span class="nf">close_files</span><span class="p">():</span>
+    <span class="n">file1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">file2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">file1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file1.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">file2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+
+<span class="c1"># Register the close_files function</span>
+<span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">close_files</span><span class="p">)</span>
+
+<span class="c1"># Your script code here</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Network Connections:</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">atexit</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="k">def</span> <span class="nf">close_connections</span><span class="p">():</span>
+    <span class="n">socket1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">socket2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">socket1</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="n">socket2</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+
+<span class="c1"># Register the close_connections function</span>
+<span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">close_connections</span><span class="p">)</span>
+
+<span class="c1"># Your script code here</span>
+</pre></div>
+</div>
+<p><strong>Use Cases</strong></p>
+<p>📦 <strong>File Management:</strong> Use <code class="docutils literal notranslate"><span class="pre">atexit</span></code> to close open files, ensuring that data is properly saved and resources are freed.</p>
+<p>🌐 <strong>Network Connections:</strong> Close network sockets or database connections gracefully, preventing potential resource leaks.</p>
+<p><strong>Best Practices</strong></p>
+<p>🕊️ <strong>Keep It Simple:</strong> Register only essential cleanup functions with <code class="docutils literal notranslate"><span class="pre">atexit</span></code>. Complex logic or time-consuming tasks might not be suitable.</p>
+<p>💡 <strong>Exception Handling:</strong> Remember that <code class="docutils literal notranslate"><span class="pre">atexit</span></code> functions are also called in case of exceptions. Make sure your cleanup code handles exceptions gracefully.</p>
+</section>
+<section id="safeguarding-data-with-python-s-hashlib-module">
+<h2>5. 🔒 Safeguarding Data with Python’s <code class="docutils literal notranslate"><span class="pre">hashlib</span></code> Module<a class="headerlink" href="#safeguarding-data-with-python-s-hashlib-module" title="Link to this heading">#</a></h2>
+<p>In a digital world teeming with sensitive information, ensuring the integrity and security of data is paramount. Python’s <code class="docutils literal notranslate"><span class="pre">hashlib</span></code> module equips you with cryptographic hash functions to create unique fingerprints of data, aiding in verification and protection against tampering.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">hashlib</span></code> module empowers you to guard data against tampering and verify its authenticity. Whether you’re securing user passwords, ensuring file integrity, or validating data integrity, <code class="docutils literal notranslate"><span class="pre">hashlib</span></code> is your shield against data vulnerabilities.</p>
+<p><strong>Why Embrace <code class="docutils literal notranslate"><span class="pre">hashlib</span></code>?</strong></p>
+<p>🔐 <strong>Data Security:</strong> Hash functions enable you to securely store passwords, check file integrity, and verify data authenticity without exposing the original content.</p>
+<p>🔍 <strong>Data Integrity:</strong> Hashing allows you to detect even the slightest alterations in data. If the hash doesn’t match, you know something has changed.</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;Hello, Python-World Newsletter readers!&#39;</span>
+<span class="n">hash_object</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">hash_value</span> <span class="o">=</span> <span class="n">hash_object</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original Data:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SHA-256 Hash:&quot;</span><span class="p">,</span> <span class="n">hash_value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Use Cases</strong></p>
+<p>🔑 <strong>Password Storage:</strong> Hash passwords before storing them in databases. When users log in, their input can be hashed and compared to the stored hash.</p>
+<p>📂 <strong>File Verification:</strong> Calculate the hash of a file before and after transmission. If the hashes match, the file is intact.</p>
+<p><strong>Best Practices</strong></p>
+<p>🔐 <strong>Salting:</strong> When hashing passwords, use a unique “salt” value for each user to prevent attackers from using precomputed hash tables (rainbow tables).</p>
+<p>💡 <strong>Secure Algorithms:</strong> Choose strong hash algorithms like SHA-256 for robust security.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="WEEK_32.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Week 32 - Augest 2023</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="WEEK_34.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Week 34 - Augest 2023</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ravishankar Chavare
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Week 33 - Augest 2023</a><ul>
+<li><a class="reference internal" href="#understanding-underscores-in-numeric-literals">1. 📊 Understanding Underscores in Numeric Literals</a></li>
+<li><a class="reference internal" href="#text-wrapping-with-python-s-textwrap-module">2. 📜 Text Wrapping with Python’s Textwrap Module</a></li>
+<li><a class="reference internal" href="#exploring-ip-address-manipulation-with-python-s-ipaddress-module">3. 🌐 Exploring IP Address Manipulation with Python’s <code class="docutils literal notranslate"><span class="pre">ipaddress</span></code> Module</a></li>
+<li><a class="reference internal" href="#graceful-script-exit-with-atexit-in-python">4. 🏁 Graceful Script Exit with <code class="docutils literal notranslate"><span class="pre">atexit</span></code> in Python</a></li>
+<li><a class="reference internal" href="#safeguarding-data-with-python-s-hashlib-module">5. 🔒 Safeguarding Data with Python’s <code class="docutils literal notranslate"><span class="pre">hashlib</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

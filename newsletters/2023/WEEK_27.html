@@ -1,0 +1,892 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Week 26 - Jully 2023" href="WEEK_26.html" /><link rel="prev" title="Week 28 - July 2023" href="WEEK_28.html" />
+
+    <!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19 -->
+        <title>Week 27 - Jully 2023 - Python-World Newsletter</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_contributors.css?v=f079e67e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Python-World Newsletter</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Python-World Newsletter</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upcoming_events.html">Upcoming Events</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.2023.html">2023</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WEEK_35.html"> September - Week 35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_34.html"> Augest - Week 34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_33.html"> Augest - Week 33</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_32.html"> Augest - Week 32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_31.html"> Augest - Week 31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_30.html"> July - Week 30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_29.html"> July - Week 29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_28.html"> July - Week 28</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#"> July - Week 27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_26.html"> June - Week 26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_25.html"> June - Week 25</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.2022.html">2022</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/WEEK_1.html"> 2022 Jan - Week 1</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="week-27-jully-2023">
+<h1>Week 27 - Jully 2023<a class="headerlink" href="#week-27-jully-2023" title="Link to this heading">#</a></h1>
+<section id="mastering-the-else-statement-in-looping">
+<h2>1. 🔄  Mastering the ‘else’ Statement in Looping<a class="headerlink" href="#mastering-the-else-statement-in-looping" title="Link to this heading">#</a></h2>
+<p>In Python, the ‘else’ statement in loops is often overlooked but can bring some valuable functionality to your code. It allows you to specify a block of code that will execute only if the loop completes normally, without any ‘break’ statements being encountered.</p>
+<p>Here’s an example to illustrate its usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All numbers processed successfully!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this code snippet, the ‘else’ block will execute only if the loop completes without encountering a ‘break’ statement. It acts as a way to provide additional actions or notifications when the loop finishes its iteration.</p>
+<p><strong>Practical Applications ✨</strong></p>
+<p>The ‘else’ statement in loops can be handy in various scenarios. Here are a few practical use cases:</p>
+<p>1️⃣ <strong>Searching for an item</strong>: You can use a ‘for’ loop to search for an element in a list and execute specific code in the ‘else’ block if the item is not found.</p>
+<p>2️⃣ <strong>Validating conditions</strong>: If you have a loop that checks multiple conditions, you can use the ‘else’ block to perform additional checks or execute code when all conditions are satisfied.</p>
+<p>3️⃣ <strong>Looping with ‘try-except’</strong>: When working with exceptions, you can combine a loop with a ‘try-except’ statement. In this case, the ‘else’ block will run if no exceptions are raised within the loop.</p>
+<p>Keep in mind that the ‘else’ block in loops is entirely optional and not mandatory. You can choose to use it when it provides clarity and improves the readability of your code.</p>
+</section>
+<section id="track-the-history-of-a-request-using-the-requests-history">
+<h2>2. 🌐 Track the history of a request using the “requests.history”<a class="headerlink" href="#track-the-history-of-a-request-using-the-requests-history" title="Link to this heading">#</a></h2>
+<p><strong>Understanding Requests History 📜</strong></p>
+<p>The “requests” library is widely used for making HTTP requests in Python. One of its notable features is the ability to track the history of a request using the “requests.history” attribute. This attribute provides access to a list of response objects that contains the entire redirect history of the original request.</p>
+<p><strong>Why is Requests History Useful? 🤔</strong></p>
+<p>1️⃣ <strong>Redirect Tracing</strong>: By accessing the requests history, you can trace the path of your request, including any redirections that occurred. This is particularly helpful when dealing with APIs or web scraping tasks that involve following redirects.</p>
+<p>2️⃣ <strong>Error Diagnosis</strong>: If a request encounters an error, examining the history can provide insights into the intermediate steps and the responses received. This can aid in diagnosing and troubleshooting issues during the request lifecycle.</p>
+<p>3️⃣ <strong>Verification</strong>: Verifying the request history allows you to ensure that the expected redirections or intermediary responses are occurring correctly. This can be crucial for compliance with specific APIs or handling authentication flows.</p>
+<p><strong>Example Usage 🚀</strong></p>
+<p>Let’s look at a simple example to demonstrate how to access the requests history:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Request was redirected </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">history</span><span class="p">)</span><span class="si">}</span><span class="s2"> times.&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Redirected to: </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Request was not redirected.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this code snippet, we make a GET request to “https://example.com”. If the request encountered any redirects, we print the number of times it was redirected and display the URLs of the intermediate responses.</p>
+<p><strong>Start Tracing Your Requests! 🔎</strong></p>
+<p>Now that you’re aware of the “requests.history” feature, start incorporating it into your projects. It enables you to track the journey of your requests, diagnose errors, and ensure the proper flow of interactions with APIs and websites.</p>
+</section>
+<section id="understanding-uuids">
+<h2>3. 🆔 Understanding UUIDs<a class="headerlink" href="#understanding-uuids" title="Link to this heading">#</a></h2>
+<p>A UUID, which stands for Universally Unique Identifier, is a 128-bit identifier that ensures uniqueness across all devices and platforms. It provides a reliable way to generate unique identifiers without the need for central coordination. Python offers a built-in module called “uuid” that allows you to work with UUIDs effortlessly.</p>
+<p><strong>Why are UUIDs Useful? 🤔</strong></p>
+<p>1️⃣ <strong>Uniqueness</strong>: UUIDs are designed to be highly unique, reducing the chances of collisions when generating identifiers. This makes them ideal for scenarios where unique identification is essential, such as database records, distributed systems, or data synchronization.</p>
+<p>2️⃣ <strong>Global Uniqueness</strong>: UUIDs generated using different machines and at different times will still maintain their uniqueness, making them suitable for distributed systems or scenarios involving multiple devices.</p>
+<p>3️⃣ <strong>Persistence</strong>: UUIDs can be serialized and stored in databases or used as identifiers in various contexts. They can be easily converted to strings, making them compatible with different data formats.</p>
+<p><strong>Generating UUIDs in Python 🚀</strong></p>
+<p>The “uuid” module in Python provides several functions to generate different types of UUIDs. Let’s take a look at a simple example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+
+<span class="c1"># Generate a random UUID</span>
+<span class="n">random_uuid</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random UUID:&quot;</span><span class="p">,</span> <span class="n">random_uuid</span><span class="p">)</span>
+
+<span class="c1"># Generate a UUID based on a host ID and current time</span>
+<span class="n">time_based_uuid</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time-based UUID:&quot;</span><span class="p">,</span> <span class="n">time_based_uuid</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this code snippet, we use the <code class="docutils literal notranslate"><span class="pre">uuid.uuid4()</span></code> function to generate a random UUID and <code class="docutils literal notranslate"><span class="pre">uuid.uuid1()</span></code> to generate a time-based UUID. You can explore other functions in the “uuid” module to generate UUIDs based on different criteria.</p>
+<p>If security is the primary concern in your application, using uuid4 is recommended due to its reliance on cryptographic randomness. However, if high uniqueness is the primary requirement and the potential predictability of MAC addresses is not a concern in your specific use case, uuid1 can still be a viable option.</p>
+<p><strong>Embrace the Power of Uniqueness! 🔐</strong></p>
+<p>By incorporating UUIDs into your Python projects, you can ensure global uniqueness, mitigate the risk of collisions, and simplify identification and data synchronization. The “uuid” module provides the necessary tools to generate and work with UUIDs effortlessly.</p>
+</section>
+<section id="understanding-errno-and-error-handling">
+<h2>4. ⚠️ Understanding Errno and Error Handling<a class="headerlink" href="#understanding-errno-and-error-handling" title="Link to this heading">#</a></h2>
+<p>In Python, “errno” refers to the system error codes that are provided by the underlying operating system. These codes represent various types of errors encountered during program execution. Python’s “errno” module provides a convenient way to access and handle these error codes.</p>
+<p><strong>Why is Error Handling Important? 🤔</strong></p>
+<p>1️⃣ <strong>Graceful Program Flow</strong>: Effective error handling allows your program to gracefully handle unexpected scenarios and prevent crashes or undesirable outcomes. It enables you to anticipate potential issues and take appropriate actions, ensuring a smoother user experience.</p>
+<p>2️⃣ <strong>Debugging and Troubleshooting</strong>: Error handling provides valuable insights into the cause of errors and helps with debugging and troubleshooting. By capturing and logging error messages and associated error codes, you can quickly identify the root cause and address the underlying issues.</p>
+<p>3️⃣ <strong>Robustness and Resilience</strong>: Proper error handling makes your code more robust and resilient. It allows you to handle exceptions, recover from errors, and implement fallback mechanisms, ensuring that your program continues to run smoothly even in challenging conditions.</p>
+<p><strong>Utilizing “Errno” in Python 🚀</strong></p>
+<p>Let’s take a look at an example that demonstrates the usage of “errno” in Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">errno</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="n">errno</span><span class="o">.</span><span class="n">ENOENT</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File not found!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="n">errno</span><span class="o">.</span><span class="n">EACCES</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Permission denied!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this code snippet, we attempt to open a file that doesn’t exist. If an <code class="docutils literal notranslate"><span class="pre">IOError</span></code> exception occurs, we check the associated <code class="docutils literal notranslate"><span class="pre">errno</span></code> attribute to determine the specific error code and provide a customized error message based on the code.</p>
+<p>Here are some commonly used <code class="docutils literal notranslate"><span class="pre">errno</span></code> attributes along with their meanings:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- `errno.EACCES`: Permission denied. Indicates that the operation was not permitted due to insufficient access rights or privileges.
+
+- `errno.EEXIST`: File or directory already exists. Occurs when attempting to create a file or directory that already exists.
+
+- `errno.ENOENT`: No such file or directory. Indicates that the specified file or directory does not exist.
+
+- `errno.EIO`: Input/output error. Indicates an error occurred during an input/output operation, such as reading from or writing to a file.
+
+- `errno.ERANGE`: Result too large. Occurs when the result of an operation exceeds the maximum representable value.
+
+- `errno.EAGAIN`: Resource temporarily unavailable. Indicates that a resource required for the operation is temporarily unavailable and the operation should be retried.
+
+- `errno.EPIPE`: Broken pipe. Occurs when a process tries to write to a pipe that has been closed by the reader.
+
+- `errno.ENOTEMPTY`: Directory not empty. Indicates that a directory being operated on is not empty and cannot be removed or overwritten.
+
+- `errno.EINVAL`: Invalid argument. Occurs when an invalid argument is passed to a function or system call.
+</pre></div>
+</div>
+<p>These are just a few examples of <code class="docutils literal notranslate"><span class="pre">errno</span></code> attributes. Python’s <code class="docutils literal notranslate"><span class="pre">errno</span></code> module provides a wide range of error codes that cover various scenarios. You can refer to the Python documentation for a comprehensive list of <code class="docutils literal notranslate"><span class="pre">errno</span></code> attributes and their meanings: https://docs.python.org/3/library/errno.html</p>
+<p>Understanding these error codes can help you diagnose and handle specific error conditions in your Python programs more effectively.</p>
+<p><strong>Handle Errors like a Pro! 💪</strong></p>
+<p>By mastering the art of error handling and utilizing the “errno” module, you can ensure your Python programs handle errors gracefully and respond intelligently to unexpected situations. Error handling empowers you to build robust and reliable applications.</p>
+</section>
+<section id="dive-into-debugging-with-pdb">
+<h2>5. 🐞 Dive into Debugging with PDB<a class="headerlink" href="#dive-into-debugging-with-pdb" title="Link to this heading">#</a></h2>
+<p><strong>⚙️ Understanding PDB and its Importance ⚙️</strong></p>
+<p>PDB, the Python Debugger, is an invaluable tool for debugging and troubleshooting Python programs. It allows you to pause the execution of your code, inspect variables, step through statements, and gain insights into the flow of your program. PDB comes in handy when you encounter unexpected behavior, errors, or when you simply want to understand the inner workings of your code.</p>
+<p><strong>Why is PDB Useful? 🤔</strong></p>
+<p>1️⃣ <strong>Precise Bug Identification</strong>: PDB enables you to set breakpoints in your code and examine variables at specific points. This helps identify the exact location of bugs and understand the values that lead to unexpected outcomes.</p>
+<p>2️⃣ <strong>Program Flow Exploration</strong>: By stepping through your code, line by line, you gain a deeper understanding of how your program executes. PDB allows you to see the sequence of statements and the values of variables at each step, making it easier to spot errors or inefficiencies.</p>
+<p>3️⃣ <strong>Interactive Troubleshooting</strong>: PDB provides an interactive environment within your program, allowing you to experiment with statements, modify variables, and test hypotheses on-the-fly. This interactive approach makes the debugging process more dynamic and efficient.</p>
+<p><strong>Unleash the Power of PDB 🚀</strong></p>
+<p>Let’s take a glimpse at how to use PDB in your Python projects:</p>
+<ol class="arabic simple">
+<li><p>Import the <code class="docutils literal notranslate"><span class="pre">pdb</span></code> module:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">pdb</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Set a breakpoint in your code:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Run your program and start debugging!</p></li>
+</ol>
+<p>Once the program hits the breakpoint, you can use PDB’s commands to navigate, inspect variables, execute statements, and step through your code.</p>
+<p><strong>Level up Your Debugging Skills! 💪</strong></p>
+<p>By embracing PDB, you unlock a whole new level of debugging proficiency. Understanding PDB’s capabilities and integrating it into your development workflow can save you time and frustration when troubleshooting issues.</p>
+</section>
+<section id="unleash-the-power-of-python-function-decorators">
+<h2>6. 🔥 Unleash the power of Python Function Decorators<a class="headerlink" href="#unleash-the-power-of-python-function-decorators" title="Link to this heading">#</a></h2>
+<p>In Python, functions are first-class objects, which means they can be passed as arguments to other functions.
+This property is known as “higher-order functions” or “first-class functions.”</p>
+<p>For example, I want to add some logging statements, before and after function execution, and log how much time the function took to execute.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="c1"># dummy function</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Executing my function&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">1000000</span><span class="o">*</span><span class="mi">100000</span><span class="o">*</span><span class="mi">1000000</span><span class="o">*</span><span class="mi">23456423</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">log_time</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before executing function&quot;</span><span class="p">)</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">func</span><span class="p">()</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished function execution&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function exitted in </span><span class="si">{</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+
+
+<span class="n">log_time</span><span class="p">(</span><span class="n">my_func</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>In this above example, you see that <code class="docutils literal notranslate"><span class="pre">log_time</span></code> function executes <code class="docutils literal notranslate"><span class="pre">my_func</span></code>,
+but also adds extra functionality.
+For external users or other modules of my library,
+if I dont want to expose <code class="docutils literal notranslate"><span class="pre">log_time</span></code> and <code class="docutils literal notranslate"><span class="pre">my_func</span></code>,
+I can simply, create a new function, calling which would have the same effect
+as doing <code class="docutils literal notranslate"><span class="pre">log_time(my_func)</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">log_time_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printing from decorator ...&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">log_time_wrapper</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printing from wrapper function ...&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before executing function&quot;</span><span class="p">)</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished function execution&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function exitted in </span><span class="si">{</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">log_time_wrapper</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>We can see that the <code class="docutils literal notranslate"><span class="pre">wrapper</span></code> function wraps the original function, and adds additional features to it.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">decorator</span></code> function returns the <code class="docutils literal notranslate"><span class="pre">wrapper</span></code> function.</p></li>
+</ul>
+<p>Now, I can enhance and convert <code class="docutils literal notranslate"><span class="pre">my_func</span></code> to a more powerful function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating decorated function ...&quot;</span><span class="p">)</span>
+<span class="n">my_func_t</span> <span class="o">=</span> <span class="n">log_time_decorator</span><span class="p">(</span><span class="n">my_func</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Calling decorated function ...&quot;</span><span class="p">)</span>
+<span class="n">my_func_t</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We may choose not to create a seperate <code class="docutils literal notranslate"><span class="pre">my_func_t</span></code> object, and just modify the existing <code class="docutils literal notranslate"><span class="pre">my_func</span></code> function object, by decorating it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_func</span> <span class="o">=</span>  <span class="n">log_time_decorator</span><span class="p">(</span><span class="n">my_func</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above line has same effect, as using the <code class="docutils literal notranslate"><span class="pre">&#64;decorator</span></code> shortcut in python while defining a function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@log_time_decorator</span>
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="c1"># dummy function</span>
+    <span class="o">...</span>
+    <span class="c1"># business logic</span>
+
+</pre></div>
+</div>
+<p>This decorator, can be re-used very easily to enhance any other function, by logging its execution time.</p>
+<p>In the newsletter of upcoming weeks, we will go through decorators in much more depth. We will discuss decorators that can take arguments and also class decorators.
+We will also discuss about various open source libraries where this decorator patter is commonly used.
+Stay tuned.</p>
+</section>
+<section id="using-assert-in-python">
+<h2>7. ✅ Using <code class="docutils literal notranslate"><span class="pre">assert</span></code> in Python<a class="headerlink" href="#using-assert-in-python" title="Link to this heading">#</a></h2>
+<p>The usage of <code class="docutils literal notranslate"><span class="pre">assert</span></code> is very simple. You simply write <code class="docutils literal notranslate"><span class="pre">assert</span></code> and then the condition, you want to check.</p>
+<p>If the condition you have put, turns out to be true, then the program flow continues as intended. Otherwise the program exits at that point, throwing an assertion error.</p>
+<p>You may choose to handle that error, and do something specific, depending on your business logic.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>If you run this piece of code, the first two <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements would pass, but the third would fail.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/aahnik/Projects/Writing/newsletter/test.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">4</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+<span class="w">    </span>assert<span class="w"> </span>x<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span>
+<span class="w">           </span>^^^^^
+AssertionError
+</pre></div>
+</div>
+<p>We can also show a custom error message, when this assertion fails.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;x is not negative&quot;</span>
+</pre></div>
+</div>
+<p>This would output</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>AssertionError:<span class="w"> </span>x<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>negative
+</pre></div>
+</div>
+<section id="industry-use-cases-of-assert">
+<h3>Industry use cases of <code class="docutils literal notranslate"><span class="pre">assert</span></code><a class="headerlink" href="#industry-use-cases-of-assert" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement in Python is a powerful tool that allows programmers to perform runtime assertions in their code. It helps verify assumptions and catch potential bugs during development and testing. While its primary purpose is to validate conditions, <code class="docutils literal notranslate"><span class="pre">assert</span></code> can be used in a variety of real-life scenarios, ranging from simple to advanced applications. In this article, we explore some practical use cases of <code class="docutils literal notranslate"><span class="pre">assert</span></code> in Python.</p>
+<section id="input-validation">
+<h4>1. Input Validation<a class="headerlink" href="#input-validation" title="Link to this heading">#</a></h4>
+<p>One common use of <code class="docutils literal notranslate"><span class="pre">assert</span></code> is to validate input parameters or function arguments. By using <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements, you can ensure that the provided inputs meet the expected criteria or constraints. Let’s consider an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_discount</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">discount</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Price should be greater than 0&quot;</span>
+    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">discount</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;Discount should be between 0 and 100&quot;</span>
+
+    <span class="n">discounted_price</span> <span class="o">=</span> <span class="n">price</span> <span class="o">-</span> <span class="p">(</span><span class="n">price</span> <span class="o">*</span> <span class="n">discount</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">discounted_price</span>
+</pre></div>
+</div>
+<p>In this scenario, the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements ensure that the <code class="docutils literal notranslate"><span class="pre">price</span></code> is positive and the <code class="docutils literal notranslate"><span class="pre">discount</span></code> is within the valid range. If any of these conditions are not met, an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> is raised with a custom error message, providing valuable feedback to the developer.</p>
+</section>
+<section id="debugging-and-testing">
+<h4>2. Debugging and Testing<a class="headerlink" href="#debugging-and-testing" title="Link to this heading">#</a></h4>
+<p>When debugging code or writing test cases, <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements can be incredibly useful. They help to check intermediate values, test assumptions, and ensure that the code is behaving as expected. Let’s consider a simple debugging example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Division by zero is not allowed&quot;</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Debugging</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;b should not be zero&quot;</span>  <span class="c1"># Assertion for debugging</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">divide_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case, the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement is used as a debugging tool to validate the assumption that <code class="docutils literal notranslate"><span class="pre">b</span></code> should not be zero before executing the <code class="docutils literal notranslate"><span class="pre">divide_numbers</span></code> function. If the condition fails, the program halts, and an error message is displayed, aiding in identifying the issue.</p>
+</section>
+<section id="program-invariants">
+<h4>3. Program Invariants<a class="headerlink" href="#program-invariants" title="Link to this heading">#</a></h4>
+<p>Program invariants are conditions that are expected to be true at specific points during the program’s execution. Using <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements to check these invariants can help detect logical errors. For instance, consider a banking application where account balances should always be positive:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">balance</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">balance</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Balance should be non-negative&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span>
+
+    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Withdraw amount should be positive&quot;</span>
+        <span class="k">assert</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">,</span> <span class="s2">&quot;Insufficient funds&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
+</pre></div>
+</div>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements ensure that the <code class="docutils literal notranslate"><span class="pre">balance</span></code> is non-negative and that the withdrawal amount is both positive and within the available funds. Violating these conditions would indicate a logical error, allowing developers to identify and fix issues early.</p>
+</section>
+<section id="unit-testing">
+<h4>4. Unit Testing<a class="headerlink" href="#unit-testing" title="Link to this heading">#</a></h4>
+<p>In unit testing, <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements are frequently used to verify the correctness of code by comparing expected and actual values. By comparing these values, <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements help validate that functions and classes produce the expected output. Let’s look at a simple example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Unit Test</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">5</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected 5, but got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>In this case, the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement ensures that the <code class="docutils literal notranslate"><span class="pre">add_numbers</span></code> function correctly adds two numbers by comparing the expected result (5) with the actual result. If they don’t match, an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> is raised, indicating a potential bug or unexpected behavior.</p>
+</section>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement in Python is a versatile tool that serves various purposes in real-life scenarios. From input validation to debugging, testing, enforcing invariants, and unit testing, <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements provide a means to verify conditions and catch potential issues early. By leveraging <code class="docutils literal notranslate"><span class="pre">assert</span></code>, programmers can improve code quality, ensure correct behavior, and reduce the likelihood of bugs in their applications.</p>
+<p>Remember that <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements are primarily intended for debugging and testing purposes and can be disabled in a production environment. Therefore, it’s crucial to use them judiciously and consider appropriate error handling mechanisms for production code.</p>
+</section>
+</section>
+<section id="exploiting-parallelism-with-python-multiprocessing-vs-multithreading-vs-co-routines">
+<h2>8. 🌀 Exploiting Parallelism with Python: Multiprocessing vs Multithreading vs Co-routines<a class="headerlink" href="#exploiting-parallelism-with-python-multiprocessing-vs-multithreading-vs-co-routines" title="Link to this heading">#</a></h2>
+<p>When executing code synchronously or sequentially, each task is processed one after the other. This approach can be limiting, especially when dealing with computationally intensive or time-consuming tasks. To overcome this limitation, parallelism comes into play, allowing multiple tasks to be executed simultaneously. In Python, there are three main techniques for exploiting parallelism: Multiprocessing, Multithreading, and Co-routines. In this article, we’ll explore these techniques, understand their differences, and determine their best use cases.</p>
+<section id="synchronous-sequential-execution">
+<h3>Synchronous/Sequential Execution<a class="headerlink" href="#synchronous-sequential-execution" title="Link to this heading">#</a></h3>
+<p>Before diving into parallelism, let’s briefly discuss synchronous or sequential execution. In this mode, code is executed line by line, and each task must complete before moving on to the next. This approach works well for simple programs, but it becomes inefficient when dealing with time-consuming operations or tasks that can benefit from concurrent processing.</p>
+</section>
+<section id="io-bound-tasks-vs-cpu-bound-tasks">
+<h3>IO-Bound Tasks vs CPU-Bound Tasks<a class="headerlink" href="#io-bound-tasks-vs-cpu-bound-tasks" title="Link to this heading">#</a></h3>
+<p>Before we explore parallelism techniques, it’s important to understand the distinction between IO-bound and CPU-bound tasks.</p>
+<ul class="simple">
+<li><p><strong>IO-Bound Tasks</strong>: These tasks spend most of their time waiting for input/output operations to complete. Examples include reading from/writing to files, making network requests, or interacting with a database. IO-bound tasks can benefit from parallelism as they can be scheduled concurrently, utilizing idle time during IO operations.</p></li>
+<li><p><strong>CPU-Bound Tasks</strong>: These tasks heavily rely on the CPU for processing and computation. Examples include complex mathematical calculations, image/video processing, or simulations. CPU-bound tasks can benefit from parallelism by utilizing multiple CPU cores to speed up execution.</p></li>
+</ul>
+</section>
+<section id="multiprocessing-for-cpu-bound-tasks">
+<h3>Multiprocessing for CPU-Bound Tasks<a class="headerlink" href="#multiprocessing-for-cpu-bound-tasks" title="Link to this heading">#</a></h3>
+<p>Multiprocessing is a technique that involves running multiple processes simultaneously to achieve parallel execution. Each process has its own memory space, allowing them to execute independently. This technique is well-suited for CPU-bound tasks, as it takes advantage of multiple CPU cores.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># Perform CPU-intensive computations</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>  <span class="c1"># Data to be processed</span>
+
+    <span class="c1"># Create a pool of processes</span>
+    <span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="c1"># Distribute the data across processes</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">process_data</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By utilizing the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module, we can spin up multiple processes to distribute CPU-bound tasks across available CPU cores. This allows us to scale the execution speed and improve overall performance.</p>
+</section>
+<section id="multithreading-for-io-bound-tasks">
+<h3>Multithreading for IO-Bound Tasks<a class="headerlink" href="#multithreading-for-io-bound-tasks" title="Link to this heading">#</a></h3>
+<p>Multithreading is a technique where multiple threads of execution run concurrently within a single process. Each thread shares the same memory space, making data sharing easier. While multithreading can provide parallelism, it’s not always suitable for CPU-bound tasks due to Python’s Global Interpreter Lock (GIL), which prevents true parallelism for CPU-bound tasks. However, it can be used effectively for IO-bound tasks.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># Perform IO-bound operations</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>  <span class="c1"># Data to be processed</span>
+
+    <span class="c1"># Create multiple threads</span>
+    <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">process_data</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">d</span><span class="p">,))</span>
+        <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
+        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="c1"># Wait for all threads to complete</span>
+    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this example, multiple threads are created to process IO-bound tasks concurrently. Each thread performs its operations independently, taking advantage of idle time during IO operations.</p>
+</section>
+<section id="co-routines-for-efficient-asynchronous-tasks">
+<h3>Co-routines for Efficient Asynchronous Tasks<a class="headerlink" href="#co-routines-for-efficient-asynchronous-tasks" title="Link to this heading">#</a></h3>
+<p>Co-routines are lightweight, independent units of execution that can be scheduled and paused during their execution. They allow for efficient concurrency without the overhead associated with operating system threads or processes. Co-routines enable us to exploit parallelism by efficiently handling both IO-bound and CPU-bound tasks.</p>
+<p>In Python, co-routines are implemented using the <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> module, which provides an event loop for managing the execution of co-routines.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># Perform async operations</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>  <span class="c1"># Data to be processed</span>
+
+    <span class="c1"># Create an event loop</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+    <span class="c1"># Schedule the execution of co-routines</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">process_data</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">))</span>
+
+    <span class="c1"># Close the event loop</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">asyncio</span></code>, we can define co-routines with the <code class="docutils literal notranslate"><span class="pre">async</span></code> keyword, enabling them to be paused and resumed during execution. Co-routines provide a more efficient approach to parallelism, allowing for both IO-bound and CPU-bound tasks to be handled effectively.</p>
+</section>
+<section id="simplifying-co-routine-development-with-async-await">
+<h3>Simplifying Co-routine Development with <code class="docutils literal notranslate"><span class="pre">async</span></code>/<code class="docutils literal notranslate"><span class="pre">await</span></code><a class="headerlink" href="#simplifying-co-routine-development-with-async-await" title="Link to this heading">#</a></h3>
+<p>Python 3.5 introduced the <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> keywords, simplifying the development of co-routines. <code class="docutils literal notranslate"><span class="pre">async</span></code> is used to define a co-routine, and <code class="docutils literal notranslate"><span class="pre">await</span></code> is used to suspend execution until the awaited operation completes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">async</span></code>/<code class="docutils literal notranslate"><span class="pre">await</span></code> syntax simplifies the handling of asynchronous tasks, making the code more readable and reducing complexity. It allows for straightforward development of highly concurrent and efficient programs.</p>
+</section>
+<section id="comparison-and-use-cases">
+<h3>Comparison and Use Cases<a class="headerlink" href="#comparison-and-use-cases" title="Link to this heading">#</a></h3>
+<p>To summarize the different techniques:</p>
+<ul class="simple">
+<li><p>Multiprocessing is best suited for CPU-bound tasks that can benefit from parallel execution across multiple CPU cores.</p></li>
+<li><p>Multithreading is useful for IO-bound tasks, leveraging concurrent execution to maximize performance during IO operations.</p></li>
+<li><p>Co-routines, with the help of <code class="docutils literal notranslate"><span class="pre">asyncio</span></code>, are effective for both IO-bound and CPU-bound tasks, providing efficient concurrency and allowing developers to write highly concurrent code.</p></li>
+</ul>
+<p>When choosing a parallelism technique, consider the nature of the task (IO-bound or CPU-bound) and the specific requirements of your application. Each technique has its strengths and use cases, allowing you to exploit parallelism in Python effectively.</p>
+<p>By leveraging parallelism, Python developers can significantly improve the performance and efficiency of their applications, enabling faster execution and better resource utilization.</p>
+<p>Remember, each technique has its own considerations and trade-offs, so choose the approach that best suits your specific requirements and use cases. Happy parallel programming in Python!</p>
+</section>
+<section id="video-resources">
+<h3>Video Resources<a class="headerlink" href="#video-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/R4Oz8JUuM4s">Making multiple HTTP requests using Python (synchronous, multiprocessing, multithreading, asyncio)</a> by <a class="reference external" href="https://www.youtube.com/&#64;IndianPythonista">Indian Pythonista</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/fKl2JW_qrso">Python Multiprocessing Tutorial: Run Code in Parallel Using the Multiprocessing Module</a> by <a class="reference external" href="https://www.youtube.com/&#64;coreyms">Corey Schafer</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/IEEhzQoKtQU">Python Threading Tutorial: Run Code Concurrently Using the Threading Module</a> by <a class="reference external" href="https://www.youtube.com/&#64;coreyms">Corey Schafer</a></p></li>
+</ul>
+</section>
+</section>
+<section id="understanding-python-typing-and-type-hints-with-mypy-and-vs-code-support">
+<h2>9. 🤸 Understanding Python Typing and Type Hints with MyPy and VS Code Support<a class="headerlink" href="#understanding-python-typing-and-type-hints-with-mypy-and-vs-code-support" title="Link to this heading">#</a></h2>
+<p>Python is a dynamically typed language, meaning variables do not require explicit type declarations. However, with the introduction of type hints in Python 3.5 and the support of tools like MyPy and VS Code, developers can now add static type information to their code, enhancing readability, maintainability, and catching potential type-related bugs.</p>
+<section id="python-typing-and-type-hints">
+<h3>Python Typing and Type Hints<a class="headerlink" href="#python-typing-and-type-hints" title="Link to this heading">#</a></h3>
+<p>Type hints in Python allow developers to provide information about the expected types of variables, function arguments, and return values. While type hints are optional and do not affect the runtime behavior of the code, they serve as documentation and enable static type checking tools to analyze the code for potential type-related errors.</p>
+<p>Consider the following example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>In this code snippet, type hints are used to indicate that both <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> should be of type <code class="docutils literal notranslate"><span class="pre">int</span></code>, and the function should return an <code class="docutils literal notranslate"><span class="pre">int</span></code>. These type hints provide clarity about the expected types, making the code more self-explanatory and enabling static analysis tools to detect type inconsistencies.</p>
+</section>
+<section id="mypy-static-type-checker-for-python">
+<h3>MyPy - Static Type Checker for Python<a class="headerlink" href="#mypy-static-type-checker-for-python" title="Link to this heading">#</a></h3>
+<p>MyPy is a popular static type checker for Python that can analyze code with type hints and detect potential type errors without running the program. It helps catch common mistakes and allows developers to find type-related bugs early in the development process.</p>
+<p>Using MyPy is straightforward. After installing it, you can run MyPy on your codebase:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mypy<span class="w"> </span>your_code.py
+</pre></div>
+</div>
+<p>If there are any type errors or inconsistencies in your code, MyPy will provide detailed error messages and suggestions for fixing them. This helps ensure that your code aligns with the specified types, improving code quality and reliability.</p>
+</section>
+<section id="vs-code-support-for-type-hints">
+<h3>VS Code Support for Type Hints<a class="headerlink" href="#vs-code-support-for-type-hints" title="Link to this heading">#</a></h3>
+<p>Visual Studio Code (VS Code) is a popular code editor with excellent support for Python and type hints. With the help of various extensions, such as the Python extension and the Pyright extension, developers can take advantage of advanced type checking features directly within the editor.</p>
+<p>Once you have the necessary extensions installed, VS Code will automatically analyze your code for type errors and provide real-time feedback. It highlights potential type mismatches, missing type hints, and other issues, helping you write more robust and maintainable code.</p>
+<p>Additionally, VS Code offers features like autocompletion and hover information based on type hints, enabling you to write code faster and with fewer errors. It improves the development experience and encourages best practices in using type hints.</p>
+</section>
+<section id="benefits-of-type-hints-and-tooling-support">
+<h3>Benefits of Type Hints and Tooling Support<a class="headerlink" href="#benefits-of-type-hints-and-tooling-support" title="Link to this heading">#</a></h3>
+<p>The use of type hints and tools like MyPy and VS Code support offer several advantages:</p>
+<ol class="arabic simple">
+<li><p><strong>Improved Readability</strong>: Type hints make code more self-documenting by providing explicit information about the expected types, leading to enhanced code comprehension and maintainability.</p></li>
+<li><p><strong>Early Bug Detection</strong>: Static type checkers like MyPy can catch potential type errors before the code is executed, reducing the chances of runtime errors and improving overall code quality.</p></li>
+<li><p><strong>Enhanced Tooling</strong>: IDEs and code editors, such as VS Code, leverage type hints to provide better autocompletion, code navigation, and error checking, leading to a more efficient and error-free development experience.</p></li>
+<li><p><strong>Collaboration and Documentation</strong>: Type hints serve as documentation for developers, making it easier to understand and collaborate on codebases. They can also generate API documentation automatically, providing clear guidance for users of your code.</p></li>
+</ol>
+</section>
+<section id="embrace-the-power-of-type-hints">
+<h3>Embrace the Power of Type Hints<a class="headerlink" href="#embrace-the-power-of-type-hints" title="Link to this heading">#</a></h3>
+<p>Type hints and the associated tooling support, such as MyPy and VS Code, offer powerful ways to enhance your Python code. By providing static type information, you can improve code quality, catch bugs early, and enjoy a more productive development experience. Embrace type hints and the available tooling to write more robust and maintainable Python code.</p>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fastapi.tiangolo.com/python-types/">Python Types Intro</a> from <a class="reference external" href="https://fastapi.tiangolo.com/">FastAPI docs</a></p></li>
+</ul>
+</section>
+</section>
+<section id="python-persistence-pickling-and-sqlite">
+<h2>10. 🗄️ Python Persistence: Pickling and SQLite<a class="headerlink" href="#python-persistence-pickling-and-sqlite" title="Link to this heading">#</a></h2>
+<p>Python provides several mechanisms for data persistence, allowing you to store and retrieve data across different program executions. Two commonly used methods for persistence are pickling and SQLite. Let’s explore these techniques briefly.</p>
+<section id="pickling">
+<h3>Pickling<a class="headerlink" href="#pickling" title="Link to this heading">#</a></h3>
+<p>Pickling is a Python-specific way of serializing and deserializing Python objects. It allows you to convert complex objects into a byte stream that can be stored in a file or transferred over a network. The <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module in Python provides the necessary functions for pickling and unpickling objects.</p>
+<p>To persist data using pickling, you can use the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># Data to be pickled</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Pickle the data to a file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+
+<span class="c1"># Unpickle the data from the file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">unpickled_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">pickle.dump()</span></code> function is used to pickle the <code class="docutils literal notranslate"><span class="pre">data</span></code> list and store it in a file named <code class="docutils literal notranslate"><span class="pre">data.pickle</span></code>. The <code class="docutils literal notranslate"><span class="pre">pickle.load()</span></code> function is then used to retrieve the pickled data from the file and store it in the <code class="docutils literal notranslate"><span class="pre">unpickled_data</span></code> variable.</p>
+<p>Pickling is a convenient way to store and retrieve Python objects, but it’s important to note that it can have security implications if used with untrusted data. Therefore, it’s recommended to use pickling only in trusted environments.</p>
+</section>
+<section id="sqlite">
+<h3>SQLite<a class="headerlink" href="#sqlite" title="Link to this heading">#</a></h3>
+<p>SQLite is a lightweight and embedded relational database engine that is widely used in Python applications. It provides a simple and efficient way to store and query structured data without requiring a separate database server. Python includes the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> module, which allows seamless interaction with SQLite databases.</p>
+<p>To use SQLite for data persistence, you can use the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="c1"># Connect to the database</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;database.db&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a cursor object</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># Create a table</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Insert data into the table</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;INSERT INTO users (name, age) VALUES (?, ?)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+
+<span class="c1"># Retrieve data from the table</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="c1"># Commit the changes</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="c1"># Close the connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this code, we first connect to the SQLite database file named <code class="docutils literal notranslate"><span class="pre">database.db</span></code>. We then create a cursor object to execute SQL statements. The code demonstrates creating a table, inserting data, and retrieving data from the table. Finally, we commit the changes and close the connection to the database.</p>
+<p>SQLite provides a SQL-based interface, making it easy to work with structured data. It supports a wide range of SQL operations, including creating tables, inserting data, querying, and more. It’s a reliable and efficient choice for many small to medium-sized applications.</p>
+</section>
+<section id="choosing-the-right-persistence-method">
+<h3>Choosing the Right Persistence Method<a class="headerlink" href="#choosing-the-right-persistence-method" title="Link to this heading">#</a></h3>
+<p>When deciding between pickling and SQLite for data persistence, consider the nature of your data and the requirements of your application. Pickling is suitable for storing and retrieving Python objects with their full state intact, while SQLite is better suited for structured data and complex querying needs.</p>
+<p>If you need to store and retrieve complex Python objects without the need for advanced querying capabilities, pickling can be a straightforward and efficient solution. On the other hand, if you require structured data storage and advanced querying capabilities, SQLite offers a more robust solution.</p>
+<p>Pickling and SQLite are just two of the many options available for data persistence in Python. Depending on your specific needs, you may explore other alternatives, such as using file systems, NoSQL databases, or ORM frameworks.</p>
+<p>Remember to evaluate the trade-offs of each persistence method, considering factors like performance, scalability, security, and the complexity of your data model. By choosing the right persistence technique, you can ensure that your data is stored effectively and can be retrieved efficiently in your Python applications.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="WEEK_26.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Week 26 - Jully 2023</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="WEEK_28.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Week 28 - July 2023</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ravishankar Chavare
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Week 27 - Jully 2023</a><ul>
+<li><a class="reference internal" href="#mastering-the-else-statement-in-looping">1. 🔄  Mastering the ‘else’ Statement in Looping</a></li>
+<li><a class="reference internal" href="#track-the-history-of-a-request-using-the-requests-history">2. 🌐 Track the history of a request using the “requests.history”</a></li>
+<li><a class="reference internal" href="#understanding-uuids">3. 🆔 Understanding UUIDs</a></li>
+<li><a class="reference internal" href="#understanding-errno-and-error-handling">4. ⚠️ Understanding Errno and Error Handling</a></li>
+<li><a class="reference internal" href="#dive-into-debugging-with-pdb">5. 🐞 Dive into Debugging with PDB</a></li>
+<li><a class="reference internal" href="#unleash-the-power-of-python-function-decorators">6. 🔥 Unleash the power of Python Function Decorators</a></li>
+<li><a class="reference internal" href="#using-assert-in-python">7. ✅ Using <code class="docutils literal notranslate"><span class="pre">assert</span></code> in Python</a><ul>
+<li><a class="reference internal" href="#industry-use-cases-of-assert">Industry use cases of <code class="docutils literal notranslate"><span class="pre">assert</span></code></a><ul>
+<li><a class="reference internal" href="#input-validation">1. Input Validation</a></li>
+<li><a class="reference internal" href="#debugging-and-testing">2. Debugging and Testing</a></li>
+<li><a class="reference internal" href="#program-invariants">3. Program Invariants</a></li>
+<li><a class="reference internal" href="#unit-testing">4. Unit Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exploiting-parallelism-with-python-multiprocessing-vs-multithreading-vs-co-routines">8. 🌀 Exploiting Parallelism with Python: Multiprocessing vs Multithreading vs Co-routines</a><ul>
+<li><a class="reference internal" href="#synchronous-sequential-execution">Synchronous/Sequential Execution</a></li>
+<li><a class="reference internal" href="#io-bound-tasks-vs-cpu-bound-tasks">IO-Bound Tasks vs CPU-Bound Tasks</a></li>
+<li><a class="reference internal" href="#multiprocessing-for-cpu-bound-tasks">Multiprocessing for CPU-Bound Tasks</a></li>
+<li><a class="reference internal" href="#multithreading-for-io-bound-tasks">Multithreading for IO-Bound Tasks</a></li>
+<li><a class="reference internal" href="#co-routines-for-efficient-asynchronous-tasks">Co-routines for Efficient Asynchronous Tasks</a></li>
+<li><a class="reference internal" href="#simplifying-co-routine-development-with-async-await">Simplifying Co-routine Development with <code class="docutils literal notranslate"><span class="pre">async</span></code>/<code class="docutils literal notranslate"><span class="pre">await</span></code></a></li>
+<li><a class="reference internal" href="#comparison-and-use-cases">Comparison and Use Cases</a></li>
+<li><a class="reference internal" href="#video-resources">Video Resources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#understanding-python-typing-and-type-hints-with-mypy-and-vs-code-support">9. 🤸 Understanding Python Typing and Type Hints with MyPy and VS Code Support</a><ul>
+<li><a class="reference internal" href="#python-typing-and-type-hints">Python Typing and Type Hints</a></li>
+<li><a class="reference internal" href="#mypy-static-type-checker-for-python">MyPy - Static Type Checker for Python</a></li>
+<li><a class="reference internal" href="#vs-code-support-for-type-hints">VS Code Support for Type Hints</a></li>
+<li><a class="reference internal" href="#benefits-of-type-hints-and-tooling-support">Benefits of Type Hints and Tooling Support</a></li>
+<li><a class="reference internal" href="#embrace-the-power-of-type-hints">Embrace the Power of Type Hints</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-persistence-pickling-and-sqlite">10. 🗄️ Python Persistence: Pickling and SQLite</a><ul>
+<li><a class="reference internal" href="#pickling">Pickling</a></li>
+<li><a class="reference internal" href="#sqlite">SQLite</a></li>
+<li><a class="reference internal" href="#choosing-the-right-persistence-method">Choosing the Right Persistence Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

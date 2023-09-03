@@ -1,0 +1,621 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Week 29 - July 2023" href="WEEK_29.html" /><link rel="prev" title="Week 31 - Augest 2023" href="WEEK_31.html" />
+
+    <!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19 -->
+        <title>Week 30 - July 2023 - Python-World Newsletter</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_contributors.css?v=f079e67e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Python-World Newsletter</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Python-World Newsletter</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upcoming_events.html">Upcoming Events</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.2023.html">2023</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WEEK_35.html"> September - Week 35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_34.html"> Augest - Week 34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_33.html"> Augest - Week 33</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_32.html"> Augest - Week 32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_31.html"> Augest - Week 31</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#"> July - Week 30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_29.html"> July - Week 29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_28.html"> July - Week 28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_27.html"> July - Week 27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_26.html"> June - Week 26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_25.html"> June - Week 25</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.2022.html">2022</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/WEEK_1.html"> 2022 Jan - Week 1</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="week-30-july-2023">
+<h1>Week 30 - July 2023<a class="headerlink" href="#week-30-july-2023" title="Link to this heading">#</a></h1>
+<section id="understanding-name-and-main">
+<h2>1. 💻 Understanding <code class="docutils literal notranslate"><span class="pre">__name__</span></code> and <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.<a class="headerlink" href="#understanding-name-and-main" title="Link to this heading">#</a></h2>
+<p>In Python, <code class="docutils literal notranslate"><span class="pre">__name__</span></code> and <code class="docutils literal notranslate"><span class="pre">__main__</span></code> are special variables that provide essential information about the execution context of a script. These variables play a crucial role in controlling how code behaves when it is run directly or imported as a module.</p>
+<p><strong>Example 1: The <code class="docutils literal notranslate"><span class="pre">__name__</span></code> Variable</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename: greetings.py</span>
+
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello, Python-World! 🐍🌍&quot;</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># This block of code will execute when the script is run directly.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">say_hello</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename: main.py</span>
+<span class="kn">import</span> <span class="nn">greetings</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Importing greetings module...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">greetings</span><span class="o">.</span><span class="n">say_hello</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>In this example, when running <code class="docutils literal notranslate"><span class="pre">greetings.py</span></code> directly, the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable will be set to <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>, and the <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> function will be executed, displaying the greeting message. However, if <code class="docutils literal notranslate"><span class="pre">greetings.py</span></code> is imported as a module into <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable will be set to <code class="docutils literal notranslate"><span class="pre">&quot;greetings&quot;</span></code>, and the <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> function won’t be executed.</p>
+<p><strong>Example 2: Using <code class="docutils literal notranslate"><span class="pre">__name__</span></code> for Modular Code</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename: math_operations.py</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running math_operations.py directly...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Addition:&quot;</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Subtraction:&quot;</span><span class="p">,</span> <span class="n">subtract</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In this example, we have a <code class="docutils literal notranslate"><span class="pre">math_operations.py</span></code> script containing various math functions. When executed directly, the script will perform addition and subtraction operations. However, when imported into another script, only the function definitions will be available, and the addition and subtraction won’t be executed.</p>
+<p><strong>Conclusion:</strong></p>
+<p>Understanding the role of <code class="docutils literal notranslate"><span class="pre">__name__</span></code> and <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is crucial for writing modular and reusable Python code. Utilizing these special variables enables you to control the execution of code based on whether a script is run directly or imported as a module.</p>
+</section>
+<section id="exploring-getattr-and-setattr-in-python">
+<h2>2. 🚀  Exploring <code class="docutils literal notranslate"><span class="pre">getattr()</span></code> and <code class="docutils literal notranslate"><span class="pre">setattr()</span></code> in python.<a class="headerlink" href="#exploring-getattr-and-setattr-in-python" title="Link to this heading">#</a></h2>
+<p>In Python, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code> and <code class="docutils literal notranslate"><span class="pre">setattr()</span></code> are built-in functions that allow us to access and modify object attributes dynamically. These functions provide a versatile way to interact with objects, especially when the attribute names are determined at runtime.</p>
+<p><strong>Example 1: Dynamic Attribute Access with <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dynamic configuration example</span>
+
+<span class="k">class</span> <span class="nc">Configuration</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
+
+<span class="c1"># Let&#39;s retrieve the value of &#39;port&#39; dynamically</span>
+<span class="n">attribute_name</span> <span class="o">=</span> <span class="s2">&quot;port&quot;</span>
+<span class="n">port_value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The port value is: </span><span class="si">{</span><span class="n">port_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code> dynamically retrieves the value of the attribute specified by the <code class="docutils literal notranslate"><span class="pre">attribute_name</span></code>. This allows us to access the <code class="docutils literal notranslate"><span class="pre">port</span></code> attribute without knowing it beforehand.</p>
+<p><strong>Example 2: Dynamic Attribute Setting with <code class="docutils literal notranslate"><span class="pre">setattr()</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dynamic attribute setting example</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;john_doe&quot;</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s set the &#39;age&#39; attribute dynamically</span>
+<span class="n">attribute_name</span> <span class="o">=</span> <span class="s2">&quot;age&quot;</span>
+<span class="n">attribute_value</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="nb">setattr</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">,</span> <span class="n">attribute_value</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;s age is: </span><span class="si">{</span><span class="n">user</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">setattr()</span></code> dynamically sets the <code class="docutils literal notranslate"><span class="pre">age</span></code> attribute with the given value. This allows us to add new attributes to objects programmatically.</p>
+<p><strong>Example 3: Handling Attribute Existence</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Handling attribute existence with getattr()</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s check if the &#39;age&#39; attribute exists, and set a default value if not found</span>
+<span class="n">attribute_name</span> <span class="o">=</span> <span class="s2">&quot;age&quot;</span>
+<span class="n">default_age</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="n">age</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">,</span> <span class="n">default_age</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;s age is: </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code> checks if the <code class="docutils literal notranslate"><span class="pre">age</span></code> attribute exists in the <code class="docutils literal notranslate"><span class="pre">person</span></code> object. If it doesn’t exist, the <code class="docutils literal notranslate"><span class="pre">default_age</span></code> value is returned, avoiding attribute errors.</p>
+<p><strong>Conclusion:</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">getattr()</span></code> and <code class="docutils literal notranslate"><span class="pre">setattr()</span></code> functions provide dynamic attribute access and modification capabilities in Python. These powerful tools enable developers to write more flexible and adaptable code, making them valuable additions to any Python programmer’s toolkit.</p>
+</section>
+<section id="parsing-installing-verifying-requirements-using-pip-internal-in-python">
+<h2>3. 📦 Parsing, installing, verifying requirements using <code class="docutils literal notranslate"><span class="pre">pip._internal</span></code> in python.<a class="headerlink" href="#parsing-installing-verifying-requirements-using-pip-internal-in-python" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> is the go-to package installer for Python developers, but did you know that it comes with a powerful internal module called <code class="docutils literal notranslate"><span class="pre">pip._internal</span></code>? This hidden gem provides advanced functionalities for package management, including the ability to parse requirements with precision.</p>
+<p><strong>Example 1: Installing Packages using <code class="docutils literal notranslate"><span class="pre">pip</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># requirements.txt</span>
+<span class="n">beautifulsoup4</span><span class="o">==</span><span class="mf">4.9.3</span>
+<span class="n">requests</span><span class="o">&gt;=</span><span class="mf">2.26.0</span>
+<span class="n">pandas</span>
+</pre></div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file specifies three packages: <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code> with version 4.9.3, <code class="docutils literal notranslate"><span class="pre">requests</span></code> with version 2.26.0 or higher, and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> without specifying a version.</p>
+<p><strong>Example 2: Parsing Requirements using <code class="docutils literal notranslate"><span class="pre">pip._internal</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pip._internal.req</span> <span class="kn">import</span> <span class="n">parse_requirements</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">parse_requirements_file</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">):</span>
+    <span class="n">requirements</span> <span class="o">=</span> <span class="n">parse_requirements</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="s2">&quot;hack&quot;</span><span class="p">)</span>  <span class="c1"># Create a dummy session</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">requirement</span><span class="p">)</span> <span class="k">for</span> <span class="n">req</span> <span class="ow">in</span> <span class="n">requirements</span><span class="p">]</span>
+
+<span class="n">requirements_file</span> <span class="o">=</span> <span class="s2">&quot;requirements.txt&quot;</span>
+<span class="n">parsed_requirements</span> <span class="o">=</span> <span class="n">parse_requirements_file</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parsed requirements:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">requirement</span> <span class="ow">in</span> <span class="n">parsed_requirements</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">requirement</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we use <code class="docutils literal notranslate"><span class="pre">pip._internal.req.parse_requirements</span></code> to parse the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file. The result is a list of required packages, each represented as a string in the format <code class="docutils literal notranslate"><span class="pre">package_name==version</span></code> or <code class="docutils literal notranslate"><span class="pre">package_name&gt;=version</span></code>.</p>
+<p><strong>Example 3: Installing Packages from Requirements</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pip._internal</span> <span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">pip_main</span>
+
+<span class="k">def</span> <span class="nf">install_requirements</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pip_main</span><span class="p">([</span><span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="s2">&quot;-r&quot;</span><span class="p">,</span> <span class="n">requirements_file</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All requirements installed successfully!&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Failed to install requirements - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">install_requirements</span><span class="p">(</span><span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we use <code class="docutils literal notranslate"><span class="pre">pip._internal.main</span></code> to run the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command on the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, installing all the specified packages and their versions.</p>
+<p><strong>Consolidated Example</strong></p>
+<p>fetch installed requirements , install requirements if not installed already</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pip._internal.req</span> <span class="kn">import</span> <span class="n">parse_requirements</span>
+<span class="kn">from</span> <span class="nn">pip._internal.operations.freeze</span> <span class="kn">import</span> <span class="n">freeze</span>
+<span class="kn">from</span> <span class="nn">pip._internal</span> <span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">pip_main</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">parse_requirements_file</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse the requirements file and return a list of required packages.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        requirements_file (str): The path to the requirements file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list of strings, each representing a required package in the format &#39;package_name==version&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">requirements</span> <span class="o">=</span> <span class="n">parse_requirements</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="s2">&quot;hack&quot;</span><span class="p">)</span>  <span class="c1"># Create a dummy session</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">requirement</span><span class="p">)</span> <span class="k">for</span> <span class="n">req</span> <span class="ow">in</span> <span class="n">requirements</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">is_package_installed</span><span class="p">(</span><span class="n">package_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a package is already installed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        package_name (str): The name of the package to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True if the package is installed, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">installed_packages</span> <span class="o">=</span> <span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">freeze</span><span class="p">()]</span>
+    <span class="n">package_sep</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&gt;=&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">,</span> <span class="s1">&#39;==&#39;</span><span class="p">]</span>
+
+    <span class="n">clean_package_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">package_sep</span><span class="p">),</span><span class="n">package_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">clean_package_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">installed_packages</span>
+
+<span class="k">def</span> <span class="nf">install_requirements</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Install the required packages specified in the requirements file if they are not already installed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        requirements_file (str): The path to the requirements file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">requirement</span> <span class="ow">in</span> <span class="n">parse_requirements_file</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">):</span>
+            <span class="n">package_name</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">version</span> <span class="o">=</span> <span class="n">requirement</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">)</span>
+            <span class="n">package_name</span> <span class="o">=</span> <span class="n">package_name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_package_installed</span><span class="p">(</span><span class="n">package_name</span><span class="p">):</span>
+                <span class="n">pip_main</span><span class="p">([</span><span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="n">requirement</span><span class="p">])</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Package &#39;</span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2">&#39; installed successfully!&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Package &#39;</span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2">&#39; is already installed.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All requirements satisfied!&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Failed to install requirements - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">requirements_file</span> <span class="o">=</span> <span class="s2">&quot;requirements.txt&quot;</span>
+<span class="n">install_requirements</span><span class="p">(</span><span class="n">requirements_file</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p><strong>Conclusion:</strong></p>
+<p>Exploring <code class="docutils literal notranslate"><span class="pre">pip._internal</span></code> brings a new dimension to requirements management in Python. Its powerful capabilities enable us to parse and install packages with ease, empowering developers to create robust and scalable applications.</p>
+</section>
+<section id="exploring-dis-disassembler-for-python-bytecode">
+<h2>4. 🔧 Exploring <code class="docutils literal notranslate"><span class="pre">dis</span></code> - Disassembler for python bytecode.<a class="headerlink" href="#exploring-dis-disassembler-for-python-bytecode" title="Link to this heading">#</a></h2>
+<p>Python bytecode is the low-level representation of Python code, generated by the Python interpreter before execution. The <code class="docutils literal notranslate"><span class="pre">dis</span></code> module allows us to disassemble Python bytecode, revealing the underlying instructions and how Python interprets our code.</p>
+<p><strong>Example 1: Disassembling Python Code</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dis</span>
+
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">greet</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">OUTPUT</span>
+<span class="sd">  3           0 RESUME                   0</span>
+
+<span class="sd">  4           2 LOAD_CONST               1 (&#39;Hello, &#39;)</span>
+<span class="sd">              4 LOAD_FAST                0 (name)</span>
+<span class="sd">              6 FORMAT_VALUE             0</span>
+<span class="sd">              8 LOAD_CONST               2 (&#39;!&#39;)</span>
+<span class="sd">             10 BUILD_STRING             3</span>
+<span class="sd">             12 STORE_FAST               1 (message)</span>
+
+<span class="sd">  5          14 LOAD_GLOBAL              1 (NULL + print)</span>
+<span class="sd">             26 LOAD_FAST                1 (message)</span>
+<span class="sd">             28 PRECALL                  1</span>
+<span class="sd">             32 CALL                     1</span>
+<span class="sd">             42 POP_TOP</span>
+<span class="sd">             44 LOAD_CONST               0 (None)</span>
+<span class="sd">             46 RETURN_VALUE</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>In this example, we define a simple function <code class="docutils literal notranslate"><span class="pre">greet</span></code> that takes a <code class="docutils literal notranslate"><span class="pre">name</span></code> argument, formats a greeting message, and prints it. By using <code class="docutils literal notranslate"><span class="pre">dis.dis(greet)</span></code>, we disassemble the bytecode of the <code class="docutils literal notranslate"><span class="pre">greet</span></code> function, revealing the Python instructions.</p>
+<p><strong>Example 2: Inspecting Loops and Conditions</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dis</span>
+
+<span class="k">def</span> <span class="nf">count_to_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> is even.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> is odd.&quot;</span><span class="p">)</span>
+
+<span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">count_to_n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we have a function <code class="docutils literal notranslate"><span class="pre">count_to_n</span></code> that counts from 0 to <code class="docutils literal notranslate"><span class="pre">n-1</span></code>, printing whether each number is even or odd. By disassembling this function, we gain insights into how Python handles loops and conditions at the bytecode level.</p>
+<p><strong>Example 3: Understanding List Comprehensions</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dis</span>
+
+<span class="k">def</span> <span class="nf">squares</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we define a function <code class="docutils literal notranslate"><span class="pre">squares</span></code> that utilizes a list comprehension to create a list of squares of even numbers up to <code class="docutils literal notranslate"><span class="pre">n-1</span></code>. By disassembling the <code class="docutils literal notranslate"><span class="pre">squares</span></code> function, we can explore how Python handles list comprehensions at the bytecode level.</p>
+<p><strong>Industry UseCases</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Performance Optimization:</strong> <code class="docutils literal notranslate"><span class="pre">dis</span></code> is handy when developers want to understand how their code is translated into bytecode. By inspecting the bytecode, they can identify performance bottlenecks, unnecessary operations, or areas for optimization, leading to more efficient code.</p></li>
+<li><p><strong>Understanding Third-Party Libraries:</strong> When using third-party libraries, especially in security-critical applications, it’s essential to know what operations are being performed under the hood. <code class="docutils literal notranslate"><span class="pre">dis</span></code> allows developers to inspect the bytecode of these libraries to ensure there are no hidden surprises.</p></li>
+<li><p><strong>Educational Purposes:</strong> In educational settings, <code class="docutils literal notranslate"><span class="pre">dis</span></code> can be used to demonstrate the internal workings of Python code. It helps students understand how the Python interpreter executes their code step by step.</p></li>
+<li><p><strong>Code Analysis and Debugging:</strong> In certain debugging scenarios, <code class="docutils literal notranslate"><span class="pre">dis</span></code> can be useful to inspect the bytecode of specific functions or modules to find the cause of unexpected behavior or bugs.</p></li>
+<li><p><strong>Reverse Engineering and Security Auditing:</strong> In cybersecurity and reverse engineering contexts, analysts may use <code class="docutils literal notranslate"><span class="pre">dis</span></code> to inspect the bytecode of potentially malicious Python scripts or modules to better understand their functionality and potential security risks.</p></li>
+<li><p><strong>Code Obfuscation and Protection:</strong> Some organizations use <code class="docutils literal notranslate"><span class="pre">dis</span></code> to analyze their code and identify vulnerabilities or areas where code obfuscation might be needed to protect intellectual property.</p></li>
+<li><p><strong>Code Quality and Compliance:</strong> In industries with strict coding standards or compliance requirements, using <code class="docutils literal notranslate"><span class="pre">dis</span></code> can help ensure that code adheres to specific guidelines and does not include prohibited operations.</p></li>
+<li><p><strong>Dynamic Code Generation:</strong> Some applications require dynamic code generation, where Python code is generated on the fly. <code class="docutils literal notranslate"><span class="pre">dis</span></code> can help developers understand and verify the generated bytecode.</p></li>
+</ol>
+<p><strong>Conclusion:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">dis</span></code> is a powerful tool for understanding Python bytecode and the inner workings of Python code. It allows developers to inspect low-level instructions, enabling them to optimize and gain deeper insights into Python’s execution.</p>
+</section>
+<section id="generating-cryptographically-secure-tokens-passwords-using-secrets">
+<h2>5. 🔒 Generating cryptographically secure tokens, passwords using <code class="docutils literal notranslate"><span class="pre">secrets</span></code>.<a class="headerlink" href="#generating-cryptographically-secure-tokens-passwords-using-secrets" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">secrets</span></code> module is part of the Python Standard Library and provides functions for generating secure random numbers, strings, and managing cryptographic operations. It is designed specifically for creating cryptographically secure tokens, passwords, and other secrets.</p>
+<p><strong>Example: Generating Secure Tokens 🔑</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">secrets</span>
+
+<span class="c1"># Generate a secure random token for authentication</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Authentication Token: </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we use <code class="docutils literal notranslate"><span class="pre">secrets.token_hex(32)</span></code> to generate a 32-byte (64-character) hexadecimal token. This token is suitable for authentication purposes, such as token-based authentication in web applications.</p>
+<p><strong>Example: Secure Password Generation</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">secrets</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">generate_password</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">12</span><span class="p">):</span>
+    <span class="c1"># Define character set for password generation</span>
+    <span class="n">characters</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span>
+
+    <span class="c1"># Generate a secure random password</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">secrets</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">characters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">password</span>
+
+<span class="n">secure_password</span> <span class="o">=</span> <span class="n">generate_password</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Secure Password: </span><span class="si">{</span><span class="n">secure_password</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we create a function <code class="docutils literal notranslate"><span class="pre">generate_password</span></code> that generates a random password of a specified length using uppercase and lowercase letters, digits, and special characters. The <code class="docutils literal notranslate"><span class="pre">secrets.choice()</span></code> function helps ensure that the password is cryptographically secure.</p>
+<p><strong>Conclusion:</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">secrets</span></code> module is a valuable asset in Python for generating cryptographically secure tokens, passwords, and managing secrets in a secure manner. By leveraging this module, developers can fortify their applications against security vulnerabilities related to sensitive information.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="WEEK_29.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Week 29 - July 2023</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="WEEK_31.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Week 31 - Augest 2023</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ravishankar Chavare
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Week 30 - July 2023</a><ul>
+<li><a class="reference internal" href="#understanding-name-and-main">1. 💻 Understanding <code class="docutils literal notranslate"><span class="pre">__name__</span></code> and <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</a></li>
+<li><a class="reference internal" href="#exploring-getattr-and-setattr-in-python">2. 🚀  Exploring <code class="docutils literal notranslate"><span class="pre">getattr()</span></code> and <code class="docutils literal notranslate"><span class="pre">setattr()</span></code> in python.</a></li>
+<li><a class="reference internal" href="#parsing-installing-verifying-requirements-using-pip-internal-in-python">3. 📦 Parsing, installing, verifying requirements using <code class="docutils literal notranslate"><span class="pre">pip._internal</span></code> in python.</a></li>
+<li><a class="reference internal" href="#exploring-dis-disassembler-for-python-bytecode">4. 🔧 Exploring <code class="docutils literal notranslate"><span class="pre">dis</span></code> - Disassembler for python bytecode.</a></li>
+<li><a class="reference internal" href="#generating-cryptographically-secure-tokens-passwords-using-secrets">5. 🔒 Generating cryptographically secure tokens, passwords using <code class="docutils literal notranslate"><span class="pre">secrets</span></code>.</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

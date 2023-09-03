@@ -1,0 +1,592 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Week 27 - Jully 2023" href="WEEK_27.html" /><link rel="prev" title="Week 29 - July 2023" href="WEEK_29.html" />
+
+    <!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19 -->
+        <title>Week 28 - July 2023 - Python-World Newsletter</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_contributors.css?v=f079e67e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Python-World Newsletter</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Python-World Newsletter</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upcoming_events.html">Upcoming Events</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.2023.html">2023</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WEEK_35.html"> September - Week 35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_34.html"> Augest - Week 34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_33.html"> Augest - Week 33</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_32.html"> Augest - Week 32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_31.html"> Augest - Week 31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_30.html"> July - Week 30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_29.html"> July - Week 29</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#"> July - Week 28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_27.html"> July - Week 27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_26.html"> June - Week 26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEEK_25.html"> June - Week 25</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.2022.html">2022</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/WEEK_1.html"> 2022 Jan - Week 1</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="week-28-july-2023">
+<h1>Week 28 - July 2023<a class="headerlink" href="#week-28-july-2023" title="Link to this heading">#</a></h1>
+<section id="unleashing-the-potential-of-counter">
+<h2>1. ⚖️ Unleashing the Potential of Counter<a class="headerlink" href="#unleashing-the-potential-of-counter" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class is a built-in container in Python’s <code class="docutils literal notranslate"><span class="pre">collections</span></code> module that provides an easy way to count the occurrences of elements in an iterable. Whether it’s counting elements in a list, characters in a string, or words in a text document, the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> has got you covered.</p>
+<p>Here’s an example to get you started:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># Count the occurrences of elements in a list</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+
+<span class="c1"># Output: Counter({1: 4, 2: 3, 3: 2, 4: 1, 5: 1})</span>
+</pre></div>
+</div>
+<p>🔢 Count with Confidence
+With the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class, you can effortlessly count and keep track of elements. It offers various methods such as <code class="docutils literal notranslate"><span class="pre">most_common()</span></code>, which returns the most frequently occurring elements, and arithmetic operations like addition and subtraction between counters.</p>
+<p>Here’s an example showcasing the <code class="docutils literal notranslate"><span class="pre">most_common()</span></code> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># Count the occurrences of characters in a string</span>
+<span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;pythonworld&quot;</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Output: [(&#39;o&#39;, 2), (&#39;t&#39;, 1)]</span>
+</pre></div>
+</div>
+<p><strong>📊 Real-Life Applications</strong></p>
+<p>The applications of <code class="docutils literal notranslate"><span class="pre">Counter</span></code> are diverse. You can use it for tasks like analyzing text data, tracking user actions, monitoring website traffic, and much more. The simplicity and efficiency of <code class="docutils literal notranslate"><span class="pre">Counter</span></code> make it a must-have tool in your Python toolkit.</p>
+<p>💡 Tips and Tricks
+To help you make the most of <code class="docutils literal notranslate"><span class="pre">Counter</span></code>, we’ve compiled some useful tips and tricks. Here are a few:</p>
+<ol class="arabic simple">
+<li><p>Initialize a counter using different approaches:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter1</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>  <span class="c1"># Empty counter</span>
+<span class="n">counter2</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># Counter from a list</span>
+<span class="n">counter3</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>  <span class="c1"># Counter from a dictionary</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Update a counter with new elements:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="n">counter</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>  <span class="c1"># Output: Counter({1: 3, 2: 2, 3: 1})</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Perform arithmetic operations between counters:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter1</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">counter2</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">counter1</span> <span class="o">+</span> <span class="n">counter2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>  <span class="c1"># Output: Counter({2: 2, 3: 2, 1: 1, 4: 1})</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Official Python Documentation: <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.Counter">Counter</a></p></li>
+</ul>
+</section>
+<section id="exploring-python-s-temporary-file-handling">
+<h2>2. ⚙️ Exploring Python’s Temporary File Handling<a class="headerlink" href="#exploring-python-s-temporary-file-handling" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> module provides a convenient way to work with temporary files and directories. It handles the creation, management, and cleanup of temporary files, making it an essential tool for various scenarios.</p>
+<p><strong>📄 Creating Temporary Files</strong></p>
+<p>Creating temporary files is a breeze with <code class="docutils literal notranslate"><span class="pre">tempfile</span></code>. Here’s an example that generates a unique temporary file name and writes some data into it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
+    <span class="n">temp_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Hello, Python-world!&quot;</span><span class="p">)</span>
+    <span class="n">temp_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">temp_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+<span class="c1"># Output: Hello, Python-world!</span>
+</pre></div>
+</div>
+<p><strong>📁 Creating Temporary Directories</strong></p>
+<p>Sometimes, you need temporary directories to store intermediate files or perform operations. The <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> module makes it easy. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+    <span class="n">temp_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="s1">&#39;example.txt&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">temp_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
+        <span class="n">temp_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello, Python-world!&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Perform operations in the temporary directory</span>
+
+<span class="c1"># The temporary directory and its contents are automatically cleaned up</span>
+</pre></div>
+</div>
+<p>⚠️ Safe and Secure Handling
+<code class="docutils literal notranslate"><span class="pre">tempfile</span></code> ensures that temporary files and directories are created securely. It uses appropriate permissions, and by default, the created files are deleted when closed or when the program terminates.</p>
+<p><strong>🌟 Examples</strong></p>
+<p>To give you a taste of the possibilities, here are a couple of unique examples showcasing the versatility of <code class="docutils literal notranslate"><span class="pre">tempfile</span></code>:</p>
+<p>1️⃣ Generating Temporary CSV Files:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
+    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">temp_file</span><span class="p">)</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">])</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">])</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Jane Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;25&#39;</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temporary CSV file created: </span><span class="si">{</span><span class="n">temp_file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>2️⃣ Creating Secure Temporary Files:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;secret_&#39;</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;/secure_dir&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
+    <span class="n">temp_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is a secure temporary file.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Secure temporary file created: </span><span class="si">{</span><span class="n">temp_file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>💡 Explore Further
+To dive deeper into the <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> module, here are some recommended resources:</p>
+<ul class="simple">
+<li><p>Official Python Documentation: <a class="reference external" href="https://docs.python.org/3/library/tempfile.html"><code class="docutils literal notranslate"><span class="pre">tempfile</span></code></a></p></li>
+</ul>
+</section>
+<section id="discovering-the-magic-of-string-prefix-matching-with-startswith">
+<h2>3. 🔍 Discovering the Magic of String Prefix Matching with startswith<a class="headerlink" href="#discovering-the-magic-of-string-prefix-matching-with-startswith" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method is a built-in string method in Python that allows you to check whether a string starts with a specific substring. It provides a straightforward and efficient way to perform prefix-based searches and comparisons.</p>
+<p><strong>✅ Basic Usage</strong></p>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method, simply call it on a string object and provide the desired prefix as the argument. The method returns a boolean value indicating whether the string starts with the specified prefix.</p>
+<p>Here’s a Python-World example to get you started:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello, Python-World! 🐍&quot;</span>
+<span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string starts with &#39;Hello&#39;&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string does not start with &#39;Hello&#39;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Output: The string starts with &#39;Hello&#39;</span>
+</pre></div>
+</div>
+<p><strong>🎯 Advanced Usage</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method is versatile and offers various possibilities for text manipulation and filtering. You can combine it with other string methods, such as <code class="docutils literal notranslate"><span class="pre">strip</span></code> or <code class="docutils literal notranslate"><span class="pre">split</span></code>, to extract specific substrings or filter out unwanted content.</p>
+<p>Here’s a Python-World example showcasing advanced usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Welcome to the Python-World Newsletter 🌍&quot;</span>
+
+<span class="c1"># Extracting words that start with a specific letter</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">filtered_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filtered_words</span><span class="p">)</span>
+
+<span class="c1"># Output: [&#39;Python-World&#39;]</span>
+
+</pre></div>
+</div>
+<p><strong>💡 Tips and Tricks</strong></p>
+<p>To help you make the most of the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method, here are a few tips and tricks:</p>
+<p>1️⃣ Case-insensitive Matching:
+You can perform case-insensitive matching by converting the strings to lowercase or uppercase before using <code class="docutils literal notranslate"><span class="pre">startswith</span></code>.</p>
+<p>2️⃣ Multiple Prefixes:
+The <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method accepts a tuple of prefixes. It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the string starts with any of the specified prefixes.</p>
+<p>3️⃣ Unicode Support:
+The <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method handles Unicode characters properly. You can search for prefixes containing emojis or special characters without any issues.</p>
+<p><strong>🌟 Examples</strong></p>
+<p>To showcase the versatility of <code class="docutils literal notranslate"><span class="pre">startswith</span></code>, here are a couple of Python-World examples:</p>
+<p>1️⃣ Checking File Extensions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;document.pdf&quot;</span>
+<span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;doc&quot;</span><span class="p">,</span> <span class="s2">&quot;txt&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The file has a supported extension&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The file extension is not supported&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>2️⃣ Filtering Email Addresses:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;info@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;john@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;jane@gmail.com&quot;</span><span class="p">]</span>
+<span class="n">filtered_emails</span> <span class="o">=</span> <span class="p">[</span><span class="n">email</span> <span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span> <span class="k">if</span> <span class="n">email</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;john&quot;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filtered_emails</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>💡 Explore Further</strong>
+To dive deeper into the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method and string manipulation in Python, here are some recommended resources:</p>
+<ul class="simple">
+<li><p>Official Python Documentation: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.startswith">str.startswith</a></p></li>
+</ul>
+</section>
+<section id="simplify-file-path-matching-and-retrieval-using-glob">
+<h2>4. 🌐  Simplify file path matching and retrieval using <code class="docutils literal notranslate"><span class="pre">glob</span></code><a class="headerlink" href="#simplify-file-path-matching-and-retrieval-using-glob" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">glob</span></code> module provides a convenient way to search for files using pattern matching rules similar to those used in the Unix shell. It allows you to retrieve a list of file paths that match a specified pattern, making it a go-to tool for various file-related operations.</p>
+<p><strong>✅ Basic Usage</strong>
+To use the <code class="docutils literal notranslate"><span class="pre">glob</span></code> module, simply import it and utilize the <code class="docutils literal notranslate"><span class="pre">glob</span></code> function. Provide a pattern as an argument to the function, and it will return a list of file paths that match the pattern.</p>
+<p>Here’s an example to get you started:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Get a list of all Python files in the current directory</span>
+<span class="n">python_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.py&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">python_files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>🌟 Unleashing the Potential</strong></p>
+<p>To showcase the versatility of <code class="docutils literal notranslate"><span class="pre">glob</span></code>, let’s explore some interesting scenarios where it can be immensely useful:</p>
+<p><strong>1️⃣ Retrieving All Files in a Directory:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Get a list of all files (including subdirectories) in a directory</span>
+<span class="n">all_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**/*&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>2️⃣ Finding Specific File Types:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Get a list of all image files in a directory</span>
+<span class="n">image_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;path/to/images/*.jpg&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>💡 Tips and Tricks</strong></p>
+<p>To help you make the most of the <code class="docutils literal notranslate"><span class="pre">glob</span></code> module, here are a few tips and tricks:</p>
+<p>1️⃣ Recursive Matching:
+The <code class="docutils literal notranslate"><span class="pre">recursive=True</span></code> parameter allows you to perform recursive matching, enabling the retrieval of files from subdirectories.</p>
+<p>2️⃣ Wildcard Usage:
+Utilize wildcards (<code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">?</span></code>) in the pattern to match multiple characters or a single character, respectively.</p>
+<p>3️⃣ Character Ranges:
+Square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) can be used to specify character ranges for pattern matching.</p>
+<p><strong>🌐 Real-Life Applications</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">glob</span></code> module finds applications in various scenarios, such as data processing, file manipulation, and directory traversing. It simplifies tasks that involve working with multiple files and allows for efficient file discovery.</p>
+<p><strong>💡 Explore Further</strong></p>
+<p>To dive deeper into the <code class="docutils literal notranslate"><span class="pre">glob</span></code> module, here are some recommended resources:</p>
+<ul class="simple">
+<li><p>Official Python Documentation: <a class="reference external" href="https://docs.python.org/3/library/glob.html"><code class="docutils literal notranslate"><span class="pre">glob</span></code></a></p></li>
+</ul>
+</section>
+<section id="unveiling-the-secrets-of-the-string-module">
+<h2>5. 🔤 Unveiling the Secrets of the string Module<a class="headerlink" href="#unveiling-the-secrets-of-the-string-module" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> module provides a rich set of constants and functions for working with strings. It offers convenient ways to access and manipulate various character sets, including numbers, ASCII characters, and special symbols.</p>
+<p><strong>🔢 Working with Numbers</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> module provides a constant called <code class="docutils literal notranslate"><span class="pre">digits</span></code>, which contains all the decimal digits (0-9). You can use this constant to easily check if a string contains numeric characters or extract numerical values from a string.</p>
+<p>Here’s a simplified example showcasing the usage of <code class="docutils literal notranslate"><span class="pre">digits</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digits:&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Digits</span><span class="p">:</span> <span class="mi">0123456789</span>
+</pre></div>
+</div>
+<p><strong>💻 ASCII Characters at Your Fingertips</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> module also provides constants for different sets of ASCII characters. For example, <code class="docutils literal notranslate"><span class="pre">ascii_letters</span></code> contains all the ASCII letters (both lowercase and uppercase), while <code class="docutils literal notranslate"><span class="pre">punctuation</span></code> contains all the ASCII punctuation symbols.</p>
+<p>Let’s see a simplified example that utilizes these constants:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ASCII Letters:&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punctuation Symbols:&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ASCII Letters: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+Punctuation Symbols: !&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+</pre></div>
+</div>
+<p><strong>💫 Special Symbols Made Easy</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> module also offers a constant called <code class="docutils literal notranslate"><span class="pre">printable</span></code>, which contains all the printable ASCII characters. This includes letters, digits, punctuation, and whitespace.</p>
+<p>Here’s a simplified example that demonstrates the usage of <code class="docutils literal notranslate"><span class="pre">printable</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printable ASCII Characters:&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">printable</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Printable ASCII Characters: 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+</pre></div>
+</div>
+<p><strong>🌟 Examples</strong></p>
+<p>To further showcase the versatility of the <code class="docutils literal notranslate"><span class="pre">string</span></code> module, here are a couple of unique examples:</p>
+<p>1️⃣ Generating Random Passwords:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">password_length</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">password_characters</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">password_characters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">password_length</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Password:&quot;</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>2️⃣ Removing Punctuation from a String:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello, Python-World!&quot;</span>
+<span class="n">clean_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleaned Text:&quot;</span><span class="p">,</span> <span class="n">clean_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>🔍 Explore Further</strong></p>
+<p>To dive deeper into the <code class="docutils literal notranslate"><span class="pre">string</span></code> module and its functionalities, here are some recommended resources:</p>
+<ul class="simple">
+<li><p>Official Python Documentation: <a class="reference external" href="https://docs.python.org/3/library/string.html"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="WEEK_27.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Week 27 - Jully 2023</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="WEEK_29.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Week 29 - July 2023</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ravishankar Chavare
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Week 28 - July 2023</a><ul>
+<li><a class="reference internal" href="#unleashing-the-potential-of-counter">1. ⚖️ Unleashing the Potential of Counter</a></li>
+<li><a class="reference internal" href="#exploring-python-s-temporary-file-handling">2. ⚙️ Exploring Python’s Temporary File Handling</a></li>
+<li><a class="reference internal" href="#discovering-the-magic-of-string-prefix-matching-with-startswith">3. 🔍 Discovering the Magic of String Prefix Matching with startswith</a></li>
+<li><a class="reference internal" href="#simplify-file-path-matching-and-retrieval-using-glob">4. 🌐  Simplify file path matching and retrieval using <code class="docutils literal notranslate"><span class="pre">glob</span></code></a></li>
+<li><a class="reference internal" href="#unveiling-the-secrets-of-the-string-module">5. 🔤 Unveiling the Secrets of the string Module</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>
